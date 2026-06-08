@@ -1,6 +1,9 @@
 import anthropic
 import json
 import math
+from dotenv import load_dotenv
+
+load_dotenv()
 
 client = anthropic.Anthropic()
 
