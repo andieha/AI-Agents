@@ -1,6 +1,6 @@
 # Daily Briefing Agent Prompt
 
-Generate a briefing to help me catch up. Include:
+Generate a briefing to help me catch up. Also Include:
 
 1. **Schedule** — List upcoming meetings and events with times, attendees, and any preparation needed
 2. **Important emails** — Summarize unread emails that need attention, grouped by urgency
