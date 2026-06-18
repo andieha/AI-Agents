@@ -13,7 +13,9 @@ Two pages need the same treatment we applied to the develop version:
 
 Each Sprint is a child of the Sprint page (`383e3c20a8ee811b8c6cfdc54246cafb`) inside AI Agent Execution (`383e3c20a8ee81c598a8cb1c4463f074`). Previous Sprints remain unchanged.
 
-**Sprint 5** (latest) — adds: news pages (AI News, Global News, Swedish News) now saved to BOTH their dedicated sections AND Reports10. Sprint 2 is superseded but not deleted.
+**Sprint 6** (latest) — key change: all new documents go inside a single dated "📁 Collection – [date]" document created at the start of each run under Reports10. Nothing saved directly to Reports10 or dedicated sections anymore. Clean All simplified: only prunes Collection documents (keep 5 most recent). Sprint 5 is superseded but not deleted.
+
+**Sprint 5** — adds: news pages (AI News, Global News, Swedish News) now saved to BOTH their dedicated sections AND Reports10. Sprint 2 is superseded but not deleted.
 
 ---
 
@@ -80,10 +82,25 @@ No existing pages are modified. Every current document stays exactly as-is.
 ## What is created per Sprint
 - **Sprint 2** (completed): first simplified version, Reports10 as save target, no UUIDs.
 - **Sprint 5** (completed, `383e3c20-a8ee-81b0-88b1-ec74b713c623`): Sprint 2 + news pages also saved to Reports10.
+- **Sprint 6** (completed, `383e3c20-a8ee-8178-b173-c98f6f3ddfe5`): all outputs go inside a single dated Collection document under Reports10. Clean All only prunes Collection documents (keep 5 most recent). Also copied to Release folder sharp as "Sprint 6 Exec".
+
+## Sprint 6 — Collection structure per run
+Reports10 (under Admin)
+└── 📁 Collection – [Month DD, YYYY]
+    ├── 🤖 AI News – [date]
+    ├── 🌍 Global News – [date]
+    ├── 🇸🇪 Swedish News – [date]
+    ├── 📡 Field Monitor Digest – Week [N], [YEAR]
+    ├── 📋 Email Summary – [date]
+    ├── 📰 Daily Brief – [date]
+    ├── 📨 Newsletter Digest – [date] (Expanded)
+    ├── Investment Signal – [desc] ([date])
+    └── 📊 Aggregated Report – [date]
 
 ## Outputs
 1. Notion Sprint pages under Sprint (`383e3c20a8ee811b8c6cfdc54246cafb`)
-2. Commit and push this .md file to git branch `claude/agent-execution-lock-upoegt`
+2. Sprint 6 Exec in Release folder sharp (`380e3c20-a8ee-811d-a0c2-ec1d227c7e9c`)
+3. Commit and push this .md file to git branch `claude/agent-execution-lock-upoegt`
 
 ## Verification
-Fetch the Sprint page: Sprint 5 exists with 6 sections including dual-save for news. Confirm git push succeeded.
+Fetch the Sprint page: Sprint 6 exists with 6 sections and Collection structure. Confirm git push succeeded.
