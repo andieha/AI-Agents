@@ -9,11 +9,11 @@ Two pages need the same treatment we applied to the develop version:
 
 ---
 
-## Approach: Create ONE Sprint 2 page — no edits to any existing pages
+## Approach: Create ONE Sprint per iteration — no edits to existing pages
 
-Create a single "Sprint 2" page as a child of the Sprint page (`383e3c20a8ee811b8c6cfdc54246cafb`) inside AI Agent Execution (`383e3c20a8ee81c598a8cb1c4463f074`).
+Each Sprint is a child of the Sprint page (`383e3c20a8ee811b8c6cfdc54246cafb`) inside AI Agent Execution (`383e3c20a8ee81c598a8cb1c4463f074`). Previous Sprints remain unchanged.
 
-Sprint 2 contains all planned new content written out in full — ready to apply, but nothing is touched yet.
+**Sprint 5** (latest) — adds: news pages (AI News, Global News, Swedish News) now saved to BOTH their dedicated sections AND Reports10. Sprint 2 is superseded but not deleted.
 
 ---
 
@@ -38,7 +38,7 @@ Notes: 5xx → wait 10s retry 3×; continue on failure; re-launch hung agent aft
 ### 2. Start Collecting All
 Trigger: **Start Collecting All** — runs 4 tasks in parallel.
 
-**Start Collecting News** — 3 parallel tasks, one dated page under each: AI News / Global News / Swedish News. Title: [emoji] [Topic] – [Month DD, YYYY]. 5 stories, English, last 24h prioritized.
+**Start Collecting News** — 3 parallel tasks. Save each page to (1) its dedicated section (AI News / Global News / Swedish News) AND (2) Reports10 (under Admin). Title: [emoji] [Topic] – [Month DD, YYYY]. 5 stories, English, last 24h prioritized.
 
 **Start Collecting Field Monitor** — 7-day analysis "AI Agents & Tool Use", 4+ web searches, themed clusters, "So What" + "Who to Follow". Save under Field Monitor. Title: Digest — AI Agents & Tool Use — Week [N], [YEAR]. See Daily Intelligence Brief — Sub-Agent Prompt for full agent logic.
 
@@ -51,7 +51,7 @@ Trigger: **Start Collecting All** — runs 4 tasks in parallel.
 ### 3. Clean All
 Trigger: **Clean All** — cleans all sections in sequence.
 
-Sections: AI News / Global News / Swedish News / Email Summary / Field Monitor / Reports10 (Daily Brief)
+Sections: AI News / Global News / Swedish News / Email Summary / Field Monitor / Reports10 (Daily Brief + News copies + Investment Signals + Newsletter Digest + Aggregated Report)
 
 Logic per section: fetch all child pages → sort newest first → keep pages 1–5 → move pages 6+ to 🗑️ Clean under Admin.
 
@@ -77,14 +77,13 @@ Logic per section: fetch all child pages → sort newest first → keep pages 1�
 ## What is NOT changed
 No existing pages are modified. Every current document stays exactly as-is.
 
-## What is created
-1. **Reports10** folder under Admin in Notion — create this first if it doesn't exist (check before creating). All prompts in Sprint 2 that previously saved to "AI Reports" now save to Reports10.
-2. ONE new page: **Sprint 2**, child of Sprint (`383e3c20a8ee811b8c6cfdc54246cafb`) under AI Agent Execution (`383e3c20a8ee81c598a8cb1c4463f074`). Contains 6 sections with simplified prompt text — no UUIDs, all save targets use "Reports10 (under Admin)".
+## What is created per Sprint
+- **Sprint 2** (completed): first simplified version, Reports10 as save target, no UUIDs.
+- **Sprint 5** (completed, `383e3c20-a8ee-81b0-88b1-ec74b713c623`): Sprint 2 + news pages also saved to Reports10.
 
 ## Outputs
-1. Create Sprint 2 page in Notion (Sprint parent `383e3c20a8ee811b8c6cfdc54246cafb`)
-2. Save this .md plan file as a Notion page inside Sprint 2 (as a child page or embedded content)
-3. Commit and push this .md file to git branch `claude/agent-execution-lock-upoegt`
+1. Notion Sprint pages under Sprint (`383e3c20a8ee811b8c6cfdc54246cafb`)
+2. Commit and push this .md file to git branch `claude/agent-execution-lock-upoegt`
 
 ## Verification
-Fetch the Sprint page: Sprint 2 exists with 6 sections + plan file content. Confirm git push succeeded.
+Fetch the Sprint page: Sprint 5 exists with 6 sections including dual-save for news. Confirm git push succeeded.
