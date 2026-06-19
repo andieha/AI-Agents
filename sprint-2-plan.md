@@ -83,6 +83,7 @@ No existing pages are modified. Every current document stays exactly as-is.
 - **Sprint 2** (completed): first simplified version, Reports10 as save target, no UUIDs.
 - **Sprint 5** (completed, `383e3c20-a8ee-81b0-88b1-ec74b713c623`): Sprint 2 + news pages also saved to Reports10.
 - **Sprint 6** (completed, `383e3c20-a8ee-8178-b173-c98f6f3ddfe5`): all outputs go inside a single dated Collection document under Reports10. Clean All only prunes Collection documents (keep 5 most recent). Also copied to Release folder sharp as "Sprint 6 Exec".
+- **Sprint 7** (completed, `384e3c20-a8ee-8118-900e-d9a475131944`): Sprint 6 + AI Agents Memory and Execution Log now reference copies under Release folder sharp → Execution documents.
 
 ## Sprint 6 — Collection structure per run
 Reports10 (under Admin)
