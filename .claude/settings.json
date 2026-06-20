@@ -1,5 +1,36 @@
 {
   "plugins": [
     "anthropics/financial-services"
-  ]
+  ],
+  "permissions": {
+    "allow": [
+      "mcp__FMP__ESG",
+      "mcp__FMP__Fundraisers",
+      "mcp__FMP__analyst",
+      "mcp__FMP__calendar",
+      "mcp__FMP__chart",
+      "mcp__FMP__commitmentOfTraders",
+      "mcp__FMP__commodity",
+      "mcp__FMP__company",
+      "mcp__FMP__crypto",
+      "mcp__FMP__directory",
+      "mcp__FMP__discountedCashFlow",
+      "mcp__FMP__earningsTranscript",
+      "mcp__FMP__economics",
+      "mcp__FMP__etfAndMutualFunds",
+      "mcp__FMP__forex",
+      "mcp__FMP__form13F",
+      "mcp__FMP__indexes",
+      "mcp__FMP__insiderTrades",
+      "mcp__FMP__marketHours",
+      "mcp__FMP__marketPerformance",
+      "mcp__FMP__news",
+      "mcp__FMP__quote",
+      "mcp__FMP__search",
+      "mcp__FMP__secFilings",
+      "mcp__FMP__senate",
+      "mcp__FMP__statements",
+      "mcp__FMP__technicalIndicators"
+    ]
+  }
 }
