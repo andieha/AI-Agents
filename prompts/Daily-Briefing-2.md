@@ -9,7 +9,7 @@ Generate a briefing to help me catch up. Also Include:
 
 Keep the briefing concise and scannable. If there's nothing notable in a section, skip it rather than saying "nothing to report."
 
-Save the result as a Google Doc in the **100 AI Agents Daily Briefing** Google Drive folder. Create a new doc titled "Daily Briefing – [Month DD, YYYY]" each run. Create the folder if it doesn't exist.
+Save the result as a Google Doc inside the **Daily Briefing** folder in Google Drive (folder ID: `1EV3CxjxYDJJcZ8saqB1QFLKDseT54bow`, path: 1 New → 100 agents → Daily Briefing). Create a new doc titled "Daily Briefing – [Month DD, YYYY]" each run.
 
 ---
 
@@ -17,7 +17,7 @@ Save the result as a Google Doc in the **100 AI Agents Daily Briefing** Google D
 
 - **Google Calendar** — upcoming events for the next 7 days
 - **Gmail** — unread inbox threads
-- **Google Drive** — save folder: 100 AI Agents Daily Briefing
+- **Google Drive** — save folder: Daily Briefing (ID: `1EV3CxjxYDJJcZ8saqB1QFLKDseT54bow`, path: 1 New → 100 agents → Daily Briefing)
 
 ## Output format
 
