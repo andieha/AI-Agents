@@ -1,5 +1,8 @@
-import math
 import anthropic
+import math
+from dotenv import load_dotenv
+
+load_dotenv()
 
 client = anthropic.Anthropic()
 
