@@ -4,6 +4,8 @@
 
 **Shared storage:** AI Agents Memory (Google Drive — 100 AI Agents / AI Agents Memory, folder ID: `1TVTUon1jtQDNkH7OiANUvsTe015MNfec`)
 
+**Important:** Do not spawn background sub-agents. Run all 3 agents sequentially and inline in this conversation. If any agent step fails, wait 10s and retry up to 3 times before skipping.
+
 Run 3 agents in strict order. Report counts after each step.
 
 ## Agent 1 — News Collector
