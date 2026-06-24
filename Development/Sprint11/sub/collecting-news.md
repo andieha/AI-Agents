@@ -6,7 +6,8 @@ Run 3 tasks in parallel. For each:
 
 - Create one dated Google Doc **inside the Collection folder** (parent = Collection Drive folder ID).
 - Title: [emoji] [Topic] – [Month DD, YYYY].
-- Content: 5 stories (title + 2–3 sentence summary + source), English, last 24h prioritized.
+- Content: 5 stories (title + 2–3 sentence summary + source URL), English, last 24h prioritized.
+- Source quality: prefer primary sources (Reuters, Bloomberg, AP, official company blogs) over aggregators.
 - Footer: "Collected automatically by Claude on [date]".
 
 ## Topics

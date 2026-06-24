@@ -15,6 +15,8 @@ Inside the Collection folder, find: all Daily Brief documents, all Investment Si
 
 ## Step 2 — Aggregate and Clean
 
+Write a 3–5 sentence **Executive Summary** covering the day's most important developments. This goes at the very top of the report, before all themed sections.
+
 Merge all matching reports. Group by theme:
 - Markets & Economy
 - AI & Technology

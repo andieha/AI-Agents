@@ -6,7 +6,8 @@
 
 1. Fetch today's Gmail inbox. Filter out sent mail and unsubscribe emails.
 2. For each email extract: sender, subject, time, 2–3 sentence summary.
-3. All text in English.
+3. Tag each email as one of: `[ACTION NEEDED]`, `[FYI]`, or `[NEWSLETTER]`.
+4. All text in English.
 
 ## Output
 

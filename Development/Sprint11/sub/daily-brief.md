@@ -4,6 +4,8 @@
 
 48-hour sweep across four themes.
 
+**Before writing Markets & Investments:** Check AI Agents Memory (Google Drive, folder ID: `1TVTUon1jtQDNkH7OiANUvsTe015MNfec`) for investment signals already generated today. Reference them rather than duplicating.
+
 ## Content Structure
 
 | Theme | Items |

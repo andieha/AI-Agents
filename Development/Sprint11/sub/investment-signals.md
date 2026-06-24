@@ -12,7 +12,14 @@ Search web for last 24h AI/robotics news (launches, funding, M&A, partnerships, 
 
 ## Agent 2 — Analyzer
 
-Read all Unprocessed rows from AI/Robotics News Feed. Assess investment implications against AI/robotics ETFs, semiconductor/memory stocks, satellite portfolio. Write to AI/Robotics Analysis:
+Read all Unprocessed rows from AI/Robotics News Feed. Assess investment implications against the following portfolio buckets:
+- AI/robotics ETFs (e.g. BOTZ, ROBO)
+- Semiconductor/memory stocks (e.g. NVDA, ASML, Samsung)
+- Satellite portfolio (e.g. ASTS, RKLB)
+
+For each ticker assessed, include current price vs. 52-week high/low as context.
+
+Write to AI/Robotics Analysis:
 - Recommendation: None / Watch / Consider Buy / Consider Sell / Reduce
 - Confidence: Low / Medium / High
 
