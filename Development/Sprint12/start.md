@@ -27,7 +27,7 @@ Create a folder titled `📁 Collection – [Month DD, YYYY]` inside Reports15 (
 
 ## Step 1 — Collect (parallel)
 
-Pass the Collection Drive folder ID to each agent and run all in parallel. Before executing each sub-prompt, read its file first (e.g. `Read Development/Sprint11/sub/collecting-news.md then execute it`):
+Pass the Collection Drive folder ID to each agent and run all in parallel. Before executing each sub-prompt, read its file first (e.g. `Read Development/Sprint12/sub/collecting-news.md then execute it`):
 
 - **collecting-news** (`sub/collecting-news.md`)
 - **field-monitor** (`sub/field-monitor.md`)
