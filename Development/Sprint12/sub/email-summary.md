@@ -10,7 +10,7 @@ Run 4 agents in strict order. Report counts after each step.
 
 Fetch Gmail inbox (last 24h). Filter out sent mail and unsubscribe emails.
 
-Read whitelist from Notion (Admin > Email > Whitelist).
+Read whitelist from Google Drive (folder ID: `12LVIpKZbFdWKltJOzclFtakeUqFsHqrn`) — look for a file named Whitelist.
 
 Classify each email:
 - **WHITELIST** — sender or subject matches any keyword in the whitelist
@@ -23,7 +23,7 @@ Report counts per category.
 ## Agent 2 — Research
 
 For each WHITELIST and ACTION NEEDED email:
-1. Search Notion — case pages, Social directory, Reports > Email Important
+1. Search Google Drive (folder ID: `12LVIpKZbFdWKltJOzclFtakeUqFsHqrn`) for prior context and email records
 2. Search prior Gmail threads with this sender
 
 Extract: who they are, prior agreements, open commitments, relevant context.
@@ -48,9 +48,9 @@ All drafts follow these rules:
 
 ## Agent 4 — Log & Summarize
 
-Log to Notion:
-- WHITELIST → update case log under the relevant Notion case page
-- ACTION NEEDED → save to Notion under Reports > Email Important
+Log to Google Drive (folder ID: `12LVIpKZbFdWKltJOzclFtakeUqFsHqrn`):
+- WHITELIST → append to or update the relevant case file
+- ACTION NEEDED → save summary to Email Important file
 
 Create a Google Doc **inside the Collection folder** (parent = Collection Drive folder ID):
 - Title: `📋 Email Summary – [Month DD, YYYY]`
@@ -61,6 +61,6 @@ Create a Google Doc **inside the Collection folder** (parent = Collection Drive 
 ## Error Handling
 
 - Gmail 5xx → wait 10s, retry 3×, then skip and report
-- Notion unavailable → Gmail draft only, add [NOTION UNAVAILABLE] to subject line
+- Google Drive unavailable → Gmail draft only, add [DRIVE UNAVAILABLE] to subject line
 - Unclear email → flag as ⚠️ NEEDS MANUAL REVIEW, no draft
 - Email body stays untranslated; summaries in English
