@@ -35,6 +35,8 @@ Spawn all 4 researcher sub-agents IN PARALLEL — not sequential. Pass the AI Re
 
 Wait for ALL 4 to complete before moving to Step 2.
 
+**Verify before continuing:** Check the AI Research folder in Google Drive. If fewer than 4 `Research Notes –` docs exist, identify which subtopics are missing and re-launch only those researchers. Wait for them to complete before proceeding.
+
 ## Step 2 — Analyse (after Step 1 completes)
 
 Read `Development/Research1/analyst.md` then execute it. Pass the AI Research folder ID.
