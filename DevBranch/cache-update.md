@@ -21,25 +21,14 @@ Compress today's entry into 3–5 bullet points max. Include:
 
 ### 3 — Update the Cache page
 
-Fetch the Cache page (Notion, Admin → Cache, ID: `38be3c20-a8ee-8102-8369-f294c1120b78`).
+Open the Cache database (Notion, Admin → 🗃️ Cache, data source ID: `9b61968e-b3f5-4765-acde-f74ab98d109a`).
 
-- If today's date section already exists → replace it with the new summary
-- If it doesn't exist → prepend a new section at the top
+- If a row with today's date already exists → update its Summary and Topics fields
+- If it doesn't exist → create a new row with Date, Summary, Day (ISO date), and Topics
 
-Format:
-```
-## [Month DD, YYYY]
-**Topics:** [comma-separated]
-- [bullet 1]
-- [bullet 2]
-- [bullet 3]
+### 4 — Delete entries older than 30 days
 
----
-```
-
-### 4 — Remove entries older than 30 days
-
-Scan the Cache page for any `## [date]` sections where the date is more than 30 days before today. Delete those sections entirely.
+Query the Cache database for rows where `Day` is earlier than today minus 30 days. Delete those rows.
 
 ## Rules
 
