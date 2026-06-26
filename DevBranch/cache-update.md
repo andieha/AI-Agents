@@ -4,35 +4,46 @@
 
 ## What this does
 
-Updates the 30-day rotation cache in Notion (Admin → Cache) with a short summary of today's session. Overwrites any entry older than 30 days to keep the cache fresh.
+Updates the 31-slot ring buffer Cache in Notion (Admin → 🗃️ Cache) with a summary of ALL
+Notion activity today. Each slot is indexed by day-of-month (1–31). Today's slot overwrites
+whatever was there before — e.g. June 26 overwrites April 26.
 
 ## Steps
 
-### 1 — Read today's Session Log entry
+### 1 — Collect today's Notion activity
 
-Fetch the Session Log page (Notion, Admin → Entry → Session Log). Read only the most recent entry (today's date at the top).
+Search ALL Notion pages that were modified today using `notion-search` with today's date.
+Scan across all sections: Admin, Entry, Current Focus, any databases updated.
 
 ### 2 — Write a short summary
 
-Compress today's entry into 3–5 bullet points max. Include:
-- What topics were covered (AI Dev / Travel / Health / Finance / Admin / Research)
+Compress everything into **3–5 bullet points max**. Cover:
+- Topics touched (AI Dev / Travel / Health / Finance / Admin / Research / Entry)
+- Key pages created or updated
 - Key decisions or outputs
-- Any open items added or closed
+- Any pipelines run or tools created
 
-### 3 — Update the Cache page
+### 3 — Identify today's ring buffer slot
 
-Open the Cache database (Notion, Admin → 🗃️ Cache, data source ID: `9b61968e-b3f5-4765-acde-f74ab98d109a`).
+Today's **Day Number** = today's day-of-month (e.g. June 26 → 26).
 
-- If a row with today's date already exists → update its Summary and Topics fields
-- If it doesn't exist → create a new row with Date, Summary, Day (ISO date), and Topics
+Open the Cache database (data source ID: `9b61968e-b3f5-4765-acde-f74ab98d109a`).
 
-### 4 — Delete entries older than 30 days
+Query the default view and find the row where `Day Number = today's day-of-month`:
 
-Query the Cache database for rows where `Day` is earlier than today minus 30 days. Delete those rows.
+- **Row found** → overwrite it: update Date (today's full date string), Summary, Topics,
+  `date:Day:start` (ISO date), and Day Number
+- **No row found** → create a new row with Date, Summary, Topics, Day (ISO date), Day Number
+
+### 4 — Confirm
+
+Verify the row was written correctly. Done — no deletion step needed (the ring buffer
+overwrites by slot, so there are never more than 31 rows).
 
 ## Rules
 
-- Maximum 5 bullets per day entry — stay concise
-- Always prepend new entries at the top (most recent first)
-- Never delete entries within the last 30 days
-- If there was no session today, skip silently
+- Maximum 5 bullets per entry — stay concise
+- Source: ALL Notion activity today, not just Session Log
+- The ring buffer key is Day Number (1–31), not the full date
+- Never delete rows — slots are reused, not deleted
+- If there was no Notion activity today, skip silently
