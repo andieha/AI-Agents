@@ -1,6 +1,6 @@
 # Daily Cache Update
 
-**Trigger:** Type **Update Cache** at the end of any session. No confirmation needed.
+**Trigger:** Runs automatically every night as a Claude Code scheduled routine.
 
 ## What this does
 
