@@ -43,7 +43,7 @@ Use `mcp__Google_Drive__read_file_content` with the file ID from the provided UR
 
 ### 3 — Enforce the character limit
 
-Maximum **80,000 characters**. If the converted text exceeds this:
+Maximum **10,000 characters**. If the converted text exceeds this:
 - Prioritise in order: Top Priorities → Executive Summary → Markets → AI/Tech → Geopolitics → Investment Signals → Personal Items
 - Trim lower-priority sections from the bottom up until under the limit
 
