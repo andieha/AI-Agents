@@ -19,9 +19,10 @@ the agentic tool-use loop, not a framework.
 |---|---|
 | `agent.py` | The entire application: tool definitions, tool implementations, the agentic loop, and the REPL entry point. |
 | `requirements.txt` | Single dependency: `anthropic>=0.40.0`. |
+| `email_agent/` | A separate, self-contained example: an email-triage agent built on the `claude_agent_sdk` (not the raw `anthropic` client). See `email_agent/README.md`. It has its own `requirements.txt` and is not imported by `agent.py` or vice versa. |
 
-There are no subdirectories, tests, CI config, linter config, README, or license
-file in this repository yet.
+There are no tests, CI config, linter config, or license file in this
+repository yet.
 
 ## Setup & running
 
