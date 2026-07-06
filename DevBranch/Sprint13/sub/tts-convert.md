@@ -1,6 +1,6 @@
 # TTS Convert
 
-**Trigger:** Provide a Google Doc URL and type **Convert to TTS**. No confirmation needed.
+**Trigger:** Either provide a Google Doc URL or file ID and type **Convert to TTS**, or be called by `start.md` with the aggregated report's Google Doc file ID. No confirmation needed.
 
 ## What this does
 
@@ -11,7 +11,7 @@ Saves the result as a new plain-text file in Google Drive next to the original.
 
 ### 1 — Read the source document
 
-Use `mcp__Google_Drive__read_file_content` with the file ID from the provided URL.
+Use `mcp__Google_Drive__read_file_content` with the file ID. If called from `start.md`, the file ID is the aggregated report's Google Doc file ID passed by the caller. If triggered manually, extract the file ID from the provided URL.
 
 ### 2 — Convert for speech (signal over noise)
 

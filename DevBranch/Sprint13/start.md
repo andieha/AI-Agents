@@ -19,7 +19,7 @@
         ├── 📨 Newsletter Digest – [date] (Expanded)
         ├── Investment Signal – [desc] ([date])
         ├── 📊 Aggregated Report – [date]
-        └── 🔊 Aggregated Report – [date] – Narrated TTS (plain text, TTS-ready)
+        └── 📊 Aggregated Report – [date] – Narrated TTS (plain text, TTS-ready)
 ```
 
 ## Notion Output
@@ -35,7 +35,7 @@ Create a folder titled `📁 Collection – [Month DD, YYYY]` inside Reports15 (
 
 ## Step 1 — Collect (parallel)
 
-Pass the Collection Drive folder ID to each agent and run all in parallel. Before executing each sub-prompt, read its file first (e.g. `Read Development/Sprint12/sub/collecting-news.md then execute it`):
+Pass the Collection Drive folder ID to each agent and run all in parallel. Before executing each sub-prompt, read its file first (e.g. `Read DevBranch/Sprint13/sub/collecting-news.md then execute it`):
 
 - **collecting-news** (`sub/collecting-news.md`)
 - **field-monitor** (`sub/field-monitor.md`)
@@ -48,10 +48,10 @@ Pass the Collection Drive folder ID to each agent and run all in parallel. Befor
 
 - **clean** (`sub/clean.md`)
 
-## Step 3 — Aggregate and Narrate (always last)
+## Step 3 — Aggregate and Convert (always last)
 
-- **aggregated-report** (`sub/aggregated-report.md`) — save inside today's Collection folder
-- **tts-convert** (`sub/tts-convert.md`) — run after aggregated-report is saved; converts the aggregated report to a clean TTS-ready plain-text file and saves it inside today's Collection folder
+- **aggregated-report** (`sub/aggregated-report.md`) — save inside today's Collection folder; note the Google Doc file ID of the saved document
+- **tts-convert** (`sub/tts-convert.md`) — run after aggregated-report is saved; pass the aggregated report's Google Doc file ID as the source; converts it to a clean TTS-ready plain-text file and saves it inside today's Collection folder
 
 ## Step 4 — Log
 
