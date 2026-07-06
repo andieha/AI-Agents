@@ -50,7 +50,7 @@ Maximum **10,000 characters**. If the converted text exceeds this:
 ### 4 — Save to Google Drive
 
 Create a new plain-text file using `mcp__Google_Drive__create_file`:
-- Title: original filename + " – TTS"
+- Title: original filename + " – Narrated TTS"
 - contentMimeType: `text/plain`
 - disableConversionToGoogleType: true
 
