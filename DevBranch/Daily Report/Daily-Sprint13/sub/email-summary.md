@@ -52,7 +52,9 @@ Log to Notion:
 - WHITELIST → update case log under the relevant Notion case page
 - ACTION NEEDED → save to Notion under Reports > Email Important
 
-Create a Google Doc **inside the Collection folder** (parent = Collection Drive folder ID):
+Check if a folder named `Results` exists inside the Collection folder. If it does not exist, create it and note its folder ID.
+
+Create a Google Doc **inside the Results folder** (parent = Results folder ID):
 - Title: `📋 Email Summary – [Month DD, YYYY]`
 - Sections in order: Whitelist | Action Needed | FYI | Newsletters
 - For each email: sender, subject, time, 2–3 sentence summary, classification tag, and draft status (Draft created / No draft)
