@@ -8,6 +8,8 @@
 100 AI Agents (folder ID: 1AAGGDZsJLGBLv3MgmOSMiJBkCthIwTId)
 ├── 📁 Execution Log  (folder ID: 1fcIrmGBV1vO-KiD3vZDFZEx4N_grS80D)
 ├── 📁 AI Agents Memory  (folder ID: 1TVTUon1jtQDNkH7OiANUvsTe015MNfec)
+├── 📁 Email  (folder ID: 12LVIpKZbFdWKltJOzclFtakeUqFsHqrn)
+│   └── Whitelist  (file ID: 1vs72H-ZCHILLXYu7XhX6dRmeNN57V0252UPtmvG0578)
 └── 📁 Reports15  (folder ID: 1aa0mOKOM_n_z2VkpU8r-Q7HgoVfdD-p_)
     └── 📁 Collection – [Month DD, YYYY]
         ├── 🤖 AI News – [date]
