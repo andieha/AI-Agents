@@ -48,9 +48,13 @@ All drafts follow these rules:
 
 ## Agent 4 — Log & Summarize
 
-Log to Notion:
-- WHITELIST → update case log under the relevant Notion case page
-- ACTION NEEDED → save to Notion under Reports > Email Important
+Check if a folder named `Email-Results` exists inside the Collection folder using `mcp__Google_Drive__search_files` with query: `title = 'Email-Results' and '[Collection Drive folder ID]' in parents`. If it does not exist, create it using `mcp__Google_Drive__create_file` with `contentMimeType: application/vnd.google-apps.folder` and `parentId` = Collection Drive folder ID. Note its folder ID — this is the **Email-Results folder ID**.
+
+Log to Google Drive (Email-Results folder):
+- WHITELIST → update or append to the `Important` log doc inside the Email-Results folder
+- ACTION NEEDED → update or append to the `Important` log doc inside the Email-Results folder
+- Any active case (e.g. Flightright) → update or append to the relevant case file doc inside the Email-Results folder (e.g. `Flightright Case File`)
+- If the log doc does not exist yet in Email-Results, create it as a new Google Doc inside the Email-Results folder
 
 Create a Google Doc **inside the Collection folder** (parent = Collection Drive folder ID):
 - Title: `📋 Email Summary – [Month DD, YYYY]`

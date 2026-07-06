@@ -17,6 +17,9 @@
         ├── 🇸🇪 Swedish News – [date]
         ├── 📡 Field Monitor Digest – Week [N], [YEAR]
         ├── 📋 Email Summary – [date]
+        ├── 📁 Email-Results (created if needed)
+        │   ├── Important
+        │   └── [Case] Case File (e.g. Flightright Case File)
         ├── 📰 Daily Brief – [date]
         ├── 📨 Newsletter Digest – [date] (Expanded)
         ├── Investment Signal – [desc] ([date])
