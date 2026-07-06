@@ -22,6 +22,13 @@
         └── 🔊 Aggregated Report – [date] – Narrated TTS
 ```
 
+## Notion Output
+
+```
+Admin → 🗃️ Cache (data source ID: 9b61968e-b3f5-4765-acde-f74ab98d109a)
+└── Row [day-of-month] — updated with today's session summary (ring buffer, 31 slots)
+```
+
 ## Before Step 1 — Create Collection Folder
 
 Create a folder titled `📁 Collection – [Month DD, YYYY]` inside Reports15 (Google Drive, folder ID: `1aa0mOKOM_n_z2VkpU8r-Q7HgoVfdD-p_`). This is the parent for all documents created in this run. Note the Collection Drive folder ID — all agents in Step 1 must save inside it.
@@ -49,6 +56,10 @@ Pass the Collection Drive folder ID to each agent and run all in parallel. Befor
 ## Step 4 — Log
 
 Add one entry to **Execution Log** (Google Drive — 100 AI Agents / Execution Log, folder ID: `1fcIrmGBV1vO-KiD3vZDFZEx4N_grS80D`) for today (title: Month DD, YYYY; short bullet summary). Overwrite if today's entry already exists.
+
+## Step 5 — Cache
+
+- **cache-update** (`sub/cache-update.md`) — run after Step 4; updates today's slot in the Notion Cache ring buffer with a summary of all activity from this run
 
 ## Notes
 
