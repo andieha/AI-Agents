@@ -40,9 +40,10 @@ Pass the Collection Drive folder ID to each agent and run all in parallel. Befor
 
 - **clean** (`sub/clean.md`)
 
-## Step 3 — Aggregate (always last)
+## Step 3 — Aggregate and Narrate (always last)
 
 - **aggregated-report** (`sub/aggregated-report.md`) — save inside today's Collection folder
+- **tts-narrate** (`sub/tts-narrate.md`) — run after aggregated-report is saved; reads the aggregated report and saves a narrated TTS version inside today's Collection folder
 
 ## Step 4 — Log
 
