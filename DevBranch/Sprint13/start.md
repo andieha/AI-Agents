@@ -19,7 +19,7 @@
         ├── 📨 Newsletter Digest – [date] (Expanded)
         ├── Investment Signal – [desc] ([date])
         ├── 📊 Aggregated Report – [date]
-        └── 🔊 Aggregated Report – [date] – Narrated TTS
+        └── 🔊 Aggregated Report – [date] – Narrated TTS (plain text, TTS-ready)
 ```
 
 ## Notion Output
@@ -51,7 +51,7 @@ Pass the Collection Drive folder ID to each agent and run all in parallel. Befor
 ## Step 3 — Aggregate and Narrate (always last)
 
 - **aggregated-report** (`sub/aggregated-report.md`) — save inside today's Collection folder
-- **tts-narrate** (`sub/tts-narrate.md`) — run after aggregated-report is saved; reads the aggregated report and saves a narrated TTS version inside today's Collection folder
+- **tts-convert** (`sub/tts-convert.md`) — run after aggregated-report is saved; converts the aggregated report to a clean TTS-ready plain-text file and saves it inside today's Collection folder
 
 ## Step 4 — Log
 
