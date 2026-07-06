@@ -18,7 +18,8 @@
         ├── 📰 Daily Brief – [date]
         ├── 📨 Newsletter Digest – [date] (Expanded)
         ├── Investment Signal – [desc] ([date])
-        └── 📊 Aggregated Report – [date]
+        ├── 📊 Aggregated Report – [date]
+        └── 🔊 Aggregated Report – [date] – Narrated TTS
 ```
 
 ## Before Step 1 — Create Collection Folder
