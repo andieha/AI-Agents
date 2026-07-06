@@ -14,7 +14,7 @@
 ## Output
 
 - Create a Google Doc **inside the Collection folder** (parent = Collection Drive folder ID).
-- Title: `Digest — AI Agents & Tool Use — Week [N], [YEAR]`
+- Title: `📡 Field Monitor Digest – Week [N], [YEAR]`
 - All content in English.
 
 ## Notes
