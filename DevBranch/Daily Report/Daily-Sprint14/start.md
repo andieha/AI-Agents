@@ -12,19 +12,20 @@
 │   └── Whitelist  (file ID: 1vs72H-ZCHILLXYu7XhX6dRmeNN57V0252UPtmvG0578)
 └── 📁 Reports15  (folder ID: 1aa0mOKOM_n_z2VkpU8r-Q7HgoVfdD-p_)
     └── 📁 Collection – [Month DD, YYYY]
-        ├── 🤖 AI News – [date]
-        ├── 🌍 Global News – [date]
-        ├── 🇸🇪 Swedish News – [date]
-        ├── 📡 Field Monitor Digest – Week [N], [YEAR]
-        ├── 📋 Email Summary – [date]
-        ├── 📁 Email-Results (created if needed)
-        │   ├── Important
-        │   └── [Case] Case File (e.g. Flightright Case File)
-        ├── 📰 Daily Brief – [date]
-        ├── 📨 Newsletter Digest – [date] (Expanded)
-        ├── Investment Signal – [desc] ([date])
-        ├── 📊 Aggregated Report – [date]
-        └── 📊 Aggregated Report – [date] – Narrated TTS (plain text, TTS-ready)
+        └── 📁 Daily-Reports
+            ├── 🤖 AI News – [date]
+            ├── 🌍 Global News – [date]
+            ├── 🇸🇪 Swedish News – [date]
+            ├── 📡 Field Monitor Digest – Week [N], [YEAR]
+            ├── 📋 Email Summary – [date]
+            ├── 📁 Email-Results (created if needed)
+            │   ├── Important
+            │   └── [Case] Case File (e.g. Flightright Case File)
+            ├── 📰 Daily Brief – [date]
+            ├── 📨 Newsletter Digest – [date] (Expanded)
+            ├── Investment Signal – [desc] ([date])
+            ├── 📊 Aggregated Report – [date]
+            └── 📊 Aggregated Report – [date] – Narrated TTS (plain text, TTS-ready)
 ```
 
 ## Notion Output
@@ -36,11 +37,12 @@ Admin → 🗃️ Cache (data source ID: 9b61968e-b3f5-4765-acde-f74ab98d109a)
 
 ## Before Step 1 — Create Collection Folder
 
-Create a folder titled `📁 Collection – [Month DD, YYYY]` inside Reports15 (Google Drive, folder ID: `1aa0mOKOM_n_z2VkpU8r-Q7HgoVfdD-p_`). This is the parent for all documents created in this run. Note the Collection Drive folder ID — all agents in Step 1 must save inside it.
+1. Check if a folder titled `📁 Collection – [Month DD, YYYY]` already exists inside Reports15 (Google Drive, folder ID: `1aa0mOKOM_n_z2VkpU8r-Q7HgoVfdD-p_`). Create it if it does not exist. Note the Collection Drive folder ID.
+2. Check if a folder named `Daily-Reports` exists inside the Collection folder. Create it if it does not exist. Note its folder ID — this is the **Daily-Reports folder ID** passed to all agents.
 
 ## Step 1 — Collect (parallel)
 
-Pass the Collection Drive folder ID to each agent and run all in parallel. All sub-agent paths are relative to the folder containing this file. Before executing each sub-prompt, read its file first (e.g. `Read ./sub/collecting-news.md then execute it`):
+Pass the **Daily-Reports folder ID** to each agent and run all in parallel. All sub-agent paths are relative to the folder containing this file. Before executing each sub-prompt, read its file first (e.g. `Read ./sub/collecting-news.md then execute it`):
 
 - **collecting-news** (`sub/collecting-news.md`)
 - **field-monitor** (`sub/field-monitor.md`)
@@ -55,8 +57,8 @@ Pass the Collection Drive folder ID to each agent and run all in parallel. All s
 
 ## Step 3 — Aggregate and Convert (always last)
 
-- **aggregated-report** (`sub/aggregated-report.md`) — save inside today's Collection folder; note the Google Doc file ID of the saved document
-- **tts-convert** (`sub/tts-convert.md`) — run after aggregated-report is saved; pass the aggregated report's Google Doc file ID as the source; converts it to a clean TTS-ready plain-text file and saves it inside today's Collection folder
+- **aggregated-report** (`sub/aggregated-report.md`) — save inside today's Daily-Reports folder; note the Google Doc file ID of the saved document
+- **tts-convert** (`sub/tts-convert.md`) — run after aggregated-report is saved; pass the aggregated report's Google Doc file ID as the source; converts it to a clean TTS-ready plain-text file and saves it inside today's Daily-Reports folder
 
 ## Step 4 — Log
 
