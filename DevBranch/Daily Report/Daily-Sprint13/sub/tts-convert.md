@@ -43,16 +43,23 @@ Use `mcp__Google_Drive__read_file_content` with the file ID. If called from `sta
 
 ### 3 — Enforce the character limit
 
-Maximum **10,000 characters**. If the converted text exceeds this:
+Maximum **10,000 characters**. Count the characters of the converted text before saving anything.
+
+If the converted text exceeds 10,000 characters:
 - Prioritise in order: Top Priorities → Executive Summary → Markets → AI/Tech → Geopolitics → Investment Signals → Personal Items
 - Trim lower-priority sections from the bottom up until under the limit
+- Recount after each trim — do not save until the count is confirmed below 10,000
+
+Do not save to Google Drive until the final text is under the limit.
 
 ### 4 — Save to Google Drive
 
-Create a new plain-text file using `mcp__Google_Drive__create_file`:
+Only after Steps 2 and 3 are fully complete and the character count is confirmed under 10,000, create a single plain-text file using `mcp__Google_Drive__create_file`:
 - Title: original filename + " – Narrated TTS"
 - contentMimeType: `text/plain`
 - disableConversionToGoogleType: true
+
+Do not create any intermediate or draft files. One save only.
 
 Confirm the file was saved and report the title and character count.
 
