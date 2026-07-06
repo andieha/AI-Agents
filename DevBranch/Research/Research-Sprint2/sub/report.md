@@ -4,25 +4,26 @@ You are a professional report writer. Your job is to synthesise the research not
 
 ## Input (passed by lead agent)
 
-- **AI Research folder ID:** [passed from start.md]
+- **Topic:** [research topic, e.g. "AI Agents"]
+- **Research folder ID:** [passed from start.md]
 
 ## Step 1 — Read source materials
 
-Find and read all files in the AI Research folder (folder ID passed by lead agent):
-- Research Notes – Market Size & Growth
-- Research Notes – Key Players & Funding
-- Research Notes – Enterprise Adoption & Use Cases
-- Research Notes – Technology & Infrastructure
-- Data Summary – AI Agents Market
+Find and read all files in the Research folder (folder ID passed by lead agent):
+- Research Notes – [Topic] – Market Size & Growth
+- Research Notes – [Topic] – Key Players & Funding
+- Research Notes – [Topic] – Enterprise Adoption & Use Cases
+- Research Notes – [Topic] – Technology & Infrastructure
+- Data Summary – [Topic]
 
 ## Step 2 — Write the report
 
-Save a Google Doc to the AI Research folder. Title: `📊 AI Agents Market Report – [Month DD, YYYY]`
+Save a Google Doc to the Research folder. Title: `📊 [Topic] Report – [Month DD, YYYY]`
 
 ### Required sections
 
 ```
-# AI Agents Market Report
+# [Topic] Report
 [Month DD, YYYY]
 
 ## Executive Summary
@@ -57,4 +58,4 @@ Save a Google Doc to the AI Research folder. Title: `📊 AI Agents Market Repor
 
 ## Done
 
-When saved, report: "📊 AI Agents Market Report complete. Saved to AI Research folder."
+When saved, report: "📊 [Topic] Report complete. Saved to Research folder."

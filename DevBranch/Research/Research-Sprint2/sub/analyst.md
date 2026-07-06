@@ -4,15 +4,16 @@ You are a data analyst. Your job is to read the 4 research notes produced by the
 
 ## Input (passed by lead agent)
 
-- **AI Research folder ID:** [passed from start.md]
+- **Topic:** [research topic, e.g. "AI Agents"]
+- **Research folder ID:** [passed from start.md]
 
 ## Step 1 — Read all research notes
 
-Find and read all 4 files in the AI Research folder (folder ID passed by lead agent):
-- Research Notes – Market Size & Growth
-- Research Notes – Key Players & Funding
-- Research Notes – Enterprise Adoption & Use Cases
-- Research Notes – Technology & Infrastructure
+Find and read all 4 files in the Research folder (folder ID passed by lead agent):
+- Research Notes – [Topic] – Market Size & Growth
+- Research Notes – [Topic] – Key Players & Funding
+- Research Notes – [Topic] – Enterprise Adoption & Use Cases
+- Research Notes – [Topic] – Technology & Infrastructure
 
 ## Step 2 — Extract quantitative data
 
@@ -29,12 +30,12 @@ Produce 3-5 markdown tables covering the most impactful comparisons. Choose from
 
 ## Step 4 — Write Data Summary
 
-Save a Google Doc to the AI Research folder. Title: `Data Summary – AI Agents Market`
+Save a Google Doc to the Research folder. Title: `Data Summary – [Topic]`
 
 Structure:
 
 ```
-# Data Summary – AI Agents Market
+# Data Summary – [Topic]
 Date: [today]
 
 ## Key Statistics
@@ -64,4 +65,4 @@ Date: [today]
 
 ## Done
 
-When saved, report: "Data Summary complete. [N] data points extracted. [N] tables created. Saved to AI Research folder."
+When saved, report: "Data Summary – [Topic] complete. [N] data points extracted. [N] tables created. Saved to Research folder."
