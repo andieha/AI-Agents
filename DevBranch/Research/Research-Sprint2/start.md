@@ -26,7 +26,7 @@
 
 You MUST delegate ALL research to sub-agents. You NEVER research yourself.
 
-Spawn all 4 researcher sub-agents IN PARALLEL — not sequential. Pass the AI Research folder ID to each. For each: read `Development/Research1/researcher.md` then execute it with the assigned subtopic and folder ID.
+Spawn all 4 researcher sub-agents IN PARALLEL — not sequential. Pass the AI Research folder ID to each. For each: read `sub/researcher.md` then execute it with the assigned subtopic and folder ID.
 
 - **Subtopic A — Market size, growth rates & forecasts**
 - **Subtopic B — Key players, funding rounds & M&A activity**
@@ -39,11 +39,11 @@ Wait for ALL 4 to complete before moving to Step 2.
 
 ## Step 2 — Analyse (after Step 1 completes)
 
-Read `Development/Research1/analyst.md` then execute it. Pass the AI Research folder ID.
+Read `sub/analyst.md` then execute it. Pass the AI Research folder ID.
 
 ## Step 3 — Report (after Step 2 completes)
 
-Read `Development/Research1/report.md` then execute it. Pass the AI Research folder ID.
+Read `sub/report.md` then execute it. Pass the AI Research folder ID.
 
 ## Step 4 — Log
 
