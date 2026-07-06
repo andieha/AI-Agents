@@ -10,13 +10,14 @@
 │   └── White list  (file ID: 1snF6KMq7o936gRQIYu-Dh5P3J-Xnfuhe8vxjKQsUCSQ)
 └── 📁 Reports15  (folder ID: 1aa0mOKOM_n_z2VkpU8r-Q7HgoVfdD-p_)
     └── 📁 Collection – [Month DD, YYYY]
-        └── 📁 [Topic] Research  (one per topic)
-            ├── Research Notes – [Topic] – Market Size & Growth
-            ├── Research Notes – [Topic] – Key Players & Funding
-            ├── Research Notes – [Topic] – Enterprise Adoption & Use Cases
-            ├── Research Notes – [Topic] – Technology & Infrastructure
-            ├── Data Summary – [Topic]
-            └── 📊 [Topic] Report – [date]
+        └── 📁 Research-Reports
+            └── 📁 [Topic] Research  (one per topic)
+                ├── Research Notes – [Topic] – Market Size & Growth
+                ├── Research Notes – [Topic] – Key Players & Funding
+                ├── Research Notes – [Topic] – Enterprise Adoption & Use Cases
+                ├── Research Notes – [Topic] – Technology & Infrastructure
+                ├── Data Summary – [Topic]
+                └── 📊 [Topic] Report – [date]
 ```
 
 ## Before Step 1 — Read Topics
@@ -25,9 +26,12 @@ Read the whitelist using `mcp__Google_Drive__read_file_content` with file ID `1s
 
 ## Before Step 1 — Prepare Folders (per topic)
 
-For each topic:
+Once (shared across all topics):
 1. Check if a folder named `📁 Collection – [Month DD, YYYY]` (today's date) already exists inside Reports15 (folder ID: `1aa0mOKOM_n_z2VkpU8r-Q7HgoVfdD-p_`). Create it if it does not exist. Note its folder ID.
-2. Inside the Collection folder, create a subfolder named `[Topic] Research`. Note its folder ID — this is the **Research folder ID** passed to all sub-agents for this topic.
+2. Check if a folder named `Research-Reports` exists inside the Collection folder. Create it if it does not exist. Note its folder ID — this is the **Research-Reports folder ID**.
+
+For each topic (in parallel):
+3. Inside Research-Reports, create a subfolder named `[Topic] Research`. Note its folder ID — this is the **Research folder ID** passed to all sub-agents for this topic.
 
 ## Step 1 — Research (parallel, per topic)
 
@@ -54,7 +58,7 @@ Read `sub/report.md` then execute it. Pass the Research folder ID and the topic 
 
 ## Step 4 — Log (per topic)
 
-Add one entry to **Execution Log** (Google Drive — 100 AI Agents / Execution Log, folder ID: `1fcIrmGBV1vO-KiD3vZDFZEx4N_grS80D`) for today (title: Month DD, YYYY; short bullet: "[Topic] research — report saved to [Topic] Research folder"). Overwrite if today's entry already exists.
+Add one entry to **Execution Log** (Google Drive — 100 AI Agents / Execution Log, folder ID: `1fcIrmGBV1vO-KiD3vZDFZEx4N_grS80D`) for today (title: Month DD, YYYY; short bullet: "[Topic] research — report saved to Research-Reports/[Topic] Research inside today's Collection folder"). Overwrite if today's entry already exists.
 
 ## Rules
 
