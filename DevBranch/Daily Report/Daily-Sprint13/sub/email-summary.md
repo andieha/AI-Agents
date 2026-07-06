@@ -10,7 +10,7 @@ Run 4 agents in strict order. Report counts after each step.
 
 Fetch Gmail inbox (last 24h). Filter out sent mail and unsubscribe emails.
 
-Read whitelist from Notion (Admin > Email > Whitelist).
+Read whitelist from Google Drive using `mcp__Google_Drive__read_file_content` with file ID `1vs72H-ZCHILLXYu7XhX6dRmeNN57V0252UPtmvG0578`.
 
 Classify each email:
 - **WHITELIST** — sender or subject matches any keyword in the whitelist
