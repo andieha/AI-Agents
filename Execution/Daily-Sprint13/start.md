@@ -69,6 +69,7 @@ Add one entry to **Execution Log** (Google Drive — 100 AI Agents / Execution L
 ## Notes
 
 - 5xx error → wait 10s, retry up to 3×, then skip and continue
+- If a Step 1 agent terminates outright (API/connection error, no output, no work done) before completing — not a tool-level 5xx it can catch itself — relaunch it once from scratch. Only treat it as skipped if the relaunch also fails.
 - If a step fails, continue — still run aggregated-report last
 - If a collection agent hasn't reported back after ~3 min, re-launch it
 - Email body stays untranslated; all summaries in English
