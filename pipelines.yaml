@@ -1,0 +1,202 @@
+repository:
+  name: AI-Agents
+  owner: andieha
+  url: https://github.com/andieha/ai-agents
+
+branches:
+  main:
+    purpose: Production — stable pipelines ready to run
+    active_pipelines:
+      - Development/Daily-Sprint13
+      - Development/Research-Sprint2
+    execution_copies:
+      - Execution/Daily-Sprint13
+    archive:
+      - Development/Old/Sprint10
+      - Development/Old/Sprint11
+      - Development/Old/Sprint12
+    legacy:
+      - Copy/
+
+  claude/new-session-u66fde:
+    purpose: Development — next versions under iteration
+    active_pipelines:
+      - DevBranch/Daily Report/Daily-Sprint14
+      - DevBranch/Research/Research-Sprint2
+
+google_drive:
+  root:
+    name: "100 AI Agents"
+    id: 1AAGGDZsJLGBLv3MgmOSMiJBkCthIwTId
+  folders:
+    execution_log:
+      name: Execution Log
+      id: 1fcIrmGBV1vO-KiD3vZDFZEx4N_grS80D
+    memory:
+      name: AI Agents Memory
+      id: 1TVTUon1jtQDNkH7OiANUvsTe015MNfec
+    email:
+      name: Email
+      id: 12LVIpKZbFdWKltJOzclFtakeUqFsHqrn
+      files:
+        whitelist:
+          name: Whitelist
+          id: 1vs72H-ZCHILLXYu7XhX6dRmeNN57V0252UPtmvG0578
+    reports:
+      name: Reports15
+      id: 1aa0mOKOM_n_z2VkpU8r-Q7HgoVfdD-p_
+      structure:
+        - "Collection – [Month DD, YYYY]/"
+        - "Collection – [Month DD, YYYY]/Daily-Reports/"
+        - "Collection – [Month DD, YYYY]/Research-Reports/"
+        - "Collection – [Month DD, YYYY]/Research-Reports/[Topic] Research/"
+    research:
+      name: Research
+      id: 1ViQt8tWLxL_vXVCLcAjqGZ5ZL3ox5_V-
+      files:
+        whitelist:
+          name: White list
+          id: 1snF6KMq7o936gRQIYu-Dh5P3J-Xnfuhe8vxjKQsUCSQ
+          description: >
+            One topic per non-empty line. Each line triggers a full
+            research pipeline in parallel when Market Research runs.
+
+notion:
+  cache:
+    name: Cache
+    parent: Admin
+    slots: 31
+    key: day-of-month
+    description: Ring buffer — slot N is overwritten each month on day N
+
+pipelines:
+
+  daily_report:
+    name: Daily Report Pipeline
+    versions:
+      production:
+        branch: main
+        path: Development/Daily-Sprint13
+      development:
+        branch: claude/new-session-u66fde
+        path: DevBranch/Daily Report/Daily-Sprint14
+    trigger: "Start the Execution"
+    steps:
+      - step: 0
+        name: Setup
+        description: >
+          Check for today's Collection folder in Reports15; create if missing.
+          Create Daily-Reports subfolder inside Collection; note its folder ID.
+      - step: 1
+        name: Collect (parallel)
+        agents:
+          - name: collecting-news
+            scope: AI news (last 24h)
+            output: "🤖 AI News – [date]"
+          - name: collecting-news
+            scope: Global news (last 24h)
+            output: "🌍 Global News – [date]"
+          - name: collecting-news
+            scope: Swedish news (last 24h)
+            output: "🇸🇪 Swedish News – [date]"
+          - name: field-monitor
+            scope: AI Agents & Tool Use (last 7 days)
+            output: "📡 Field Monitor Digest – Week [N], [YEAR]"
+          - name: email-summary
+            scope: Gmail inbox — classify, draft replies, log to Notion
+            output: "📋 Email Summary – [date]"
+          - name: daily-brief
+            scope: Markets, AI & technology, strategic signals (last 48h)
+            output: "📰 Daily Brief – [date]"
+          - name: newsletter-digest
+            scope: Newsletter emails received today
+            output: "📨 Newsletter Digest – [date] (Expanded)"
+          - name: investment-signals
+            scope: AI/robotics news — portfolio implications
+            output: "Investment Signal – [desc] ([date])"
+      - step: 2
+        name: Clean
+        description: Scan Reports15 for Collection folders older than 30 days; list for manual deletion.
+        agent: clean
+      - step: 3
+        name: Aggregate & Convert (sequential)
+        agents:
+          - name: aggregated-report
+            description: Merge all Step 1 docs into a single themed report
+            output: "📊 Aggregated Report – [date]"
+          - name: tts-convert
+            description: Produce plain-text speech-ready version (max 10,000 chars)
+            output: "📊 Aggregated Report – [date] – Narrated TTS"
+      - step: 4
+        name: Log
+        description: Write today's entry to Execution Log folder in Google Drive.
+      - step: 5
+        name: Cache
+        description: >
+          Update Notion Cache ring buffer — slot = today's day-of-month.
+          Overwrites whatever was in that slot from prior months.
+        agent: cache-update
+    outputs:
+      google_drive:
+        - "Reports15 → Collection – [date] → Daily-Reports/ (all documents)"
+        - "Execution Log → [date] (run summary)"
+      notion:
+        - "Admin → Cache → Row [day-of-month]"
+      gmail:
+        - "Drafts (email replies — never auto-sent)"
+
+  market_research:
+    name: Market Research Pipeline
+    versions:
+      production:
+        branch: main
+        path: Development/Research-Sprint2
+      development:
+        branch: claude/new-session-u66fde
+        path: DevBranch/Research/Research-Sprint2
+    trigger: "Run Market Research"
+    topic_source:
+      type: google_drive
+      file_id: 1snF6KMq7o936gRQIYu-Dh5P3J-Xnfuhe8vxjKQsUCSQ
+      description: One topic per line; all topics run in parallel
+    steps:
+      - step: 0
+        name: Setup (per topic, parallel)
+        description: >
+          Read whitelist. For each topic: ensure Collection folder exists,
+          ensure Research-Reports subfolder exists, create [Topic] Research
+          subfolder. Note each folder ID.
+      - step: 1
+        name: Research (parallel — 4 agents per topic)
+        subtopics:
+          - "Market Size & Growth"
+          - "Key Players & Funding"
+          - "Enterprise Adoption & Use Cases"
+          - "Technology & Infrastructure"
+        agent: researcher
+        queries_per_subtopic: 5–10
+        stats_per_note: 10–15
+        output: "Research Notes – [Topic] – [Subtopic]"
+        rules:
+          - WebSearch only — no training knowledge
+          - Sources must be published within the last 30 days
+          - Every claim must include a source URL and publication date
+      - step: 2
+        name: Analyse (sequential — after all researchers complete)
+        agent: analyst
+        input: All 4 Research Notes docs
+        output: "Data Summary – [Topic]"
+        produces: 3–5 comparison tables
+      - step: 3
+        name: Report (sequential — after analyst)
+        agent: report
+        input: Data Summary + all Research Notes
+        output: "📊 [Topic] Report – [Month DD, YYYY]"
+        length: 500–1000 words
+      - step: 4
+        name: Log
+        description: Write run summary to Execution Log folder in Google Drive.
+    outputs:
+      google_drive:
+        - "Reports15 → Collection – [date] → Research-Reports → [Topic] Research/ (all docs)"
+        - "Execution Log → [date] (run summary)"
