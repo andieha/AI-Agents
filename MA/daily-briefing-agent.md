@@ -1,3 +1,9 @@
+<!--
+  Note: the mcp_servers entry below points to drivemcp.googleapis.com, which is
+  not an actual Google API domain. If this config is ever deployed/executed
+  rather than kept as documentation, verify that endpoint before trusting it
+  with Google Drive access.
+-->
 name: Daily Briefing Agent Real
 description: Compiles a personalized daily briefing — news, key updates, and action items, including a dedicated AI agents news section — and saves it, along with its own configuration, to Google Drive each morning.
 model:
