@@ -46,4 +46,4 @@ tools:
 metadata:
   template: deep-research
   input_doc: YOUR_USERINPUT_DOC_ID
-  output_folder: YOUR_STAGING_FOLDER_ID
+  output_folder: 1WWEfjohYD0wC8z3tTIY-WqTOglRXfBtF

@@ -36,8 +36,8 @@ system: |-
   6. At the end of the brief, append a "Sources" section with a numbered, clickable list of every YouTube URL cited in the document. Each entry must include the video title and a hyperlink. No clip used in the brief may be omitted from this list.
 
   7. Save the completed YouTube brief as a Google Doc to this folder:
-  https://drive.google.com/drive/folders/1wGffK4zcoBIvt0GbUFlQVTWudRfwukUO
-  (folder ID: 1wGffK4zcoBIvt0GbUFlQVTWudRfwukUO)
+  https://drive.google.com/drive/folders/1g7Wcuqzd4XL1EIN7bD7LUwq_NR9C-1U2
+  (folder ID: 1g7Wcuqzd4XL1EIN7bD7LUwq_NR9C-1U2)
   Title: "YouTube Brief – [Month DD, YYYY]"
 
 tools:
@@ -46,4 +46,4 @@ tools:
 metadata:
   template: deep-research
   input_doc: https://docs.google.com/document/d/1qKFgkaBDbe7Qb3ysXz_nc6GYcsrxoxiu29EKxkPW7Eg/edit?usp=drivesdk
-  output_folder: 1wGffK4zcoBIvt0GbUFlQVTWudRfwukUO
+  output_folder: 1g7Wcuqzd4XL1EIN7bD7LUwq_NR9C-1U2

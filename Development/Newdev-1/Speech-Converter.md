@@ -75,5 +75,5 @@ tools:
 
 metadata:
   template: deep-research
-  input_folder: YOUR_OUTPUT_FOLDER_ID
-  output_folder: YOUR_OUTPUT_FOLDER_ID
+  input_folder: 1Ybc2UKM7jmwRxL5woyu1dp76xcjH-vl1
+  output_folder: 1Ybc2UKM7jmwRxL5woyu1dp76xcjH-vl1
