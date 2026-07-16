@@ -1,6 +1,6 @@
 name: Control
 
-description: Daily runner. Reads today's schedule from the Control doc in Google Drive and executes every pipeline marked ON for the current day.
+description: Daily runner. Reads today's schedule from the Control spreadsheet in Google Drive and executes every pipeline marked ON for the current day.
 
 model: claude-opus-4-8
 
@@ -10,21 +10,27 @@ system: |-
 
   1. Get today's date and day of the week automatically.
 
-  2. Open the Control doc:
+  2. Open the Control spreadsheet:
      https://docs.google.com/spreadsheets/d/1myGMQOLCCiZrQQx8Xv68Fat1LM8_fFX3Rjt1bFfr2Tk/edit
      (file ID: 1myGMQOLCCiZrQQx8Xv68Fat1LM8_fFX3Rjt1bFfr2Tk)
 
-  3. From the SCHEDULE table, find every row where DAY = today and STATUS = ON.
-     From the PIPELINE KEY table, resolve each short pipeline name to its full file path.
-     From the RESEARCH TOPICS table, read the topic for today if a Research task is ON.
-
+     Find every row where DAY = today and STATUS = ON.
      If today is a weekend, stop: "No pipelines run on weekends."
-     If nothing is ON for today, stop: "Nothing scheduled for [day] — check the Control doc."
+     If nothing is ON for today, stop: "Nothing scheduled for [day] — check the Control spreadsheet."
+
+  3. Resolve each PIPELINE short name to its file path using this key:
+
+     News      → Development/Sprint 14/Newdev/A/Pipeline-A-ref.md
+     Longevity → Development/Sprint 14/Newdev/A/Pipeline-Longevity-ref.md
+     YouTube   → Development/Sprint 14/Newdev/A/YouTube-1.md
+     Research  → Development/Fromgit/Pipeline.md
+     General   → Development/Newdev-1/Brief-Collector.md
+
+     For Research tasks: use the NOTES column value as the research topic.
 
   4. Run each ON task in order:
-     - Read the pipeline file at the resolved path.
-     - Execute it following its own instructions.
-     - For Research tasks, pass the topic from the Control doc.
+     - Read the resolved pipeline file to load its instructions.
+     - Execute it following those instructions.
      - Wait for each task to finish before starting the next.
 
   5. Report when done:
