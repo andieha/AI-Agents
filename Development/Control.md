@@ -11,8 +11,8 @@ system: |-
   1. Get today's date and day of the week automatically.
 
   2. Open the Control doc:
-     https://docs.google.com/document/d/1_Cssl-0bOeoE16KzodravHn5haAFMi0FZ2IGTaVByQo/edit
-     (file ID: 1_Cssl-0bOeoE16KzodravHn5haAFMi0FZ2IGTaVByQo)
+     https://docs.google.com/document/d/1En6dBokXaMefB5dHhHThF0Nbh4g936XcA2QtinZC2JI/edit
+     (file ID: 1En6dBokXaMefB5dHhHThF0Nbh4g936XcA2QtinZC2JI)
 
   3. From the SCHEDULE table, find every row where DAY = today and STATUS = ON.
      From the PIPELINE KEY table, resolve each short pipeline name to its full file path.
@@ -40,4 +40,4 @@ tools:
 
 metadata:
   template: daily-runner
-  control_doc: 1_Cssl-0bOeoE16KzodravHn5haAFMi0FZ2IGTaVByQo
+  control_doc: 1En6dBokXaMefB5dHhHThF0Nbh4g936XcA2QtinZC2JI
