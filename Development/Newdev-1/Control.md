@@ -11,9 +11,10 @@ system: |-
   1. Get today's date and day of the week automatically.
 
   2. Open the Control spreadsheet:
-     https://docs.google.com/spreadsheets/d/1myGMQOLCCiZrQQx8Xv68Fat1LM8_fFX3Rjt1bFfr2Tk/edit
-     (file ID: 1myGMQOLCCiZrQQx8Xv68Fat1LM8_fFX3Rjt1bFfr2Tk)
+     https://docs.google.com/spreadsheets/d/1p7SXTNB4PmBRhTR_VUAiGpc0FDz9PvwjX65jtJ_2Mxo/edit
+     (file ID: 1p7SXTNB4PmBRhTR_VUAiGpc0FDz9PvwjX65jtJ_2Mxo)
 
+     The spreadsheet has 7 columns: DAY · TASK · PIPELINE · STATUS · FOCUS · SOURCES/RESEARCHERS · NOTES
      Find every row where DAY = today and STATUS = ON.
      If today is a weekend, stop: "No pipelines run on weekends."
      If nothing is ON for today, stop: "Nothing scheduled for [day] — check the Control spreadsheet."
@@ -26,10 +27,12 @@ system: |-
      Research  → Development/Fromgit/Pipeline.md
      General   → Development/Newdev-1/Brief-Collector.md
 
-     For Research tasks: use the NOTES column value as the research topic.
+     Pass the FOCUS and SOURCES/RESEARCHERS columns as context to each pipeline when executing.
+     For Research tasks: use the FOCUS column value as the research topic.
 
   4. Run each ON task in order:
      - Read the resolved pipeline file to load its instructions.
+     - Pass FOCUS and SOURCES/RESEARCHERS as additional context.
      - Execute it following those instructions.
      - Wait for each task to finish before starting the next.
 
@@ -46,4 +49,4 @@ tools:
 
 metadata:
   template: daily-runner
-  control_doc: 1myGMQOLCCiZrQQx8Xv68Fat1LM8_fFX3Rjt1bFfr2Tk
+  control_doc: 1p7SXTNB4PmBRhTR_VUAiGpc0FDz9PvwjX65jtJ_2Mxo
