@@ -25,9 +25,15 @@ system: |-
 
   Be skeptical of low-quality or clickbait sources. Prefer original reporting and official sources over aggregators.
 
+  6. Save the completed daily brief as a Google Doc to this folder:
+  https://drive.google.com/drive/folders/1wGffK4zcoBIvt0GbUFlQVTWudRfwukUO
+  (folder ID: 1wGffK4zcoBIvt0GbUFlQVTWudRfwukUO)
+  Title: "News Brief – [Month DD, YYYY]"
+
 tools:
   - type: agent_toolset_20260401
 
 metadata:
   template: deep-research
   input_doc: https://docs.google.com/document/d/1qKFgkaBDbe7Qb3ysXz_nc6GYcsrxoxiu29EKxkPW7Eg/edit?usp=drivesdk
+  output_folder: 1wGffK4zcoBIvt0GbUFlQVTWudRfwukUO
