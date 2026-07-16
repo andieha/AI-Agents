@@ -22,14 +22,15 @@ system: |-
   3. For each ON task, run the agents below in sequence.
      Read each agent file to load its instructions before executing it.
      Wait for each agent to finish before starting the next.
-     Pass FOCUS, SOURCES/RESEARCHERS, and any doc ID from NOTES as context to every agent.
+     Pass the FOCUS and SOURCES/RESEARCHERS text directly as context to every agent.
+     These are the only inputs — there are no separate input documents.
 
      All pipelines use agents from: Development/Newdev-1/
 
      YouTube
        Agent: Development/Newdev-1/YouTube.md
        Output folder: 1g7Wcuqzd4XL1EIN7bD7LUwq_NR9C-1U2
-       Context: pass FOCUS and SOURCES/RESEARCHERS from the spreadsheet row
+       Context: FOCUS and SOURCES/RESEARCHERS from the spreadsheet row
 
      News
        Agents: Development/Newdev-1/Brief-Collector.md
@@ -37,8 +38,7 @@ system: |-
                Development/Newdev-1/Speech-Converter.md
        Staging folder: 1wGffK4zcoBIvt0GbUFlQVTWudRfwukUO
        Output folder:  1wGffK4zcoBIvt0GbUFlQVTWudRfwukUO
-       Userinput doc: extract from the NOTES column of the spreadsheet row, or derive from FOCUS
-       Context: pass FOCUS (top global stories, geopolitics, etc.) and SOURCES/RESEARCHERS (Reuters, AP, AFP, BBC, etc.)
+       Context: FOCUS and SOURCES/RESEARCHERS from the spreadsheet row
 
      Longevity
        Agents: Development/Newdev-1/Brief-Collector.md
@@ -46,8 +46,7 @@ system: |-
                Development/Newdev-1/Speech-Converter.md
        Staging folder: 1Qr8l-Iadr2qLSKeDh1ORX_EY9MhATifM
        Output folder:  1EfZOO3PX-3Go4RYWE0pn_ePx3pVAvHzN
-       Userinput doc: extract from the NOTES column (e.g. 1qFVob3WvwG--P5-kAEplxFtV1bdMn6_RTXdihSHhSqY)
-       Context: pass FOCUS (sleep, nutrition, longevity categories) and SOURCES/RESEARCHERS (PubMed, Nature, NEJM, etc.)
+       Context: FOCUS and SOURCES/RESEARCHERS from the spreadsheet row
 
      Research
        Agents: Development/Newdev-1/Brief-Collector.md
@@ -55,8 +54,7 @@ system: |-
                Development/Newdev-1/Speech-Converter.md
        Staging folder: 1BhXEN6QpTfaBP0T9U0DMcKta4U2K3VRJ
        Output folder:  1BhXEN6QpTfaBP0T9U0DMcKta4U2K3VRJ
-       Userinput doc: extract from the NOTES column, or use FOCUS as the research topic directly
-       Context: pass FOCUS as the research topic
+       Context: FOCUS and SOURCES/RESEARCHERS from the spreadsheet row
 
      General
        Agents: Development/Newdev-1/Brief-Collector.md
@@ -64,17 +62,16 @@ system: |-
                Development/Newdev-1/Speech-Converter.md
        Staging folder: 1WWEfjohYD0wC8z3tTIY-WqTOglRXfBtF
        Output folder:  1Ybc2UKM7jmwRxL5woyu1dp76xcjH-vl1
-       Userinput doc: extract from the NOTES column, or use FOCUS as the topic
-       Context: pass FOCUS and SOURCES/RESEARCHERS from the spreadsheet row
+       Context: FOCUS and SOURCES/RESEARCHERS from the spreadsheet row
 
-     When running Brief-Collector: override its metadata input_doc and output_folder with the
-     values above for the current pipeline. Pass the Userinput doc ID as input_doc.
+     When running Brief-Collector: override its metadata output_folder with the
+     staging folder above for the current pipeline.
 
-     When running Fact-Checker: override its metadata input_folder and output_folder with the
-     staging and output folders above for the current pipeline.
+     When running Fact-Checker: override its metadata input_folder and output_folder
+     with the staging and output folders above for the current pipeline.
 
-     When running Speech-Converter: override its metadata input_folder with the output folder
-     above for the current pipeline.
+     When running Speech-Converter: override its metadata input_folder with the
+     output folder above for the current pipeline.
 
   4. Report when done:
 
