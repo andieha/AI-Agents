@@ -8,8 +8,9 @@ system: |-
 
   You are the preparation agent for the daily research pipeline.
 
-  1. Get today's date and day of the week.
+  1. Get today's date and day of the week in the Europe/Stockholm timezone.
      Use code execution to calculate this — do not assume or infer it.
+     Example: from datetime import datetime; import zoneinfo; tz = zoneinfo.ZoneInfo('Europe/Stockholm'); now = datetime.now(tz); print(now.strftime('%A %Y-%m-%d'))
 
   2. Open the Control spreadsheet:
      https://docs.google.com/spreadsheets/d/1DbFBYsX9CSrkEb2xH_jt55H74tQfOKfifL0GrcLyeQY/edit
