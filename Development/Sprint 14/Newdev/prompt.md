@@ -6,7 +6,7 @@ collecting-news.
 
 Also use
 start.md from
-https://github.com/andieha/AI-Agents/tree/main/Execution%2FDaily-Sprint13
+https://github.com/andieha/AI-Agents/tree/main/Development/Sprint%2014
 
 to get where the results should be.
 
