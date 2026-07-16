@@ -11,8 +11,8 @@ system: |-
   1. Get today's date and day of the week automatically.
 
   2. Open the Control spreadsheet:
-     https://docs.google.com/spreadsheets/d/1hYYdPofaVkWYEB4D_60bt3MgQWawyuJ5Sv-ptQWqMvY/edit
-     (file ID: 1hYYdPofaVkWYEB4D_60bt3MgQWawyuJ5Sv-ptQWqMvY)
+     https://docs.google.com/spreadsheets/d/1eM32h7DXO9DuFVum-VmeqMjAuHrPNfTYLA-EXvyDF9Q/edit
+     (file ID: 1eM32h7DXO9DuFVum-VmeqMjAuHrPNfTYLA-EXvyDF9Q)
 
      Columns: DAY · SUBJECT · TASK · PIPELINE · STATUS · FOCUS · SOURCES/RESEARCHERS · NOTES
      Find every row where DAY = today and STATUS = ON.
@@ -89,4 +89,4 @@ tools:
 
 metadata:
   template: daily-runner
-  control_doc: 1hYYdPofaVkWYEB4D_60bt3MgQWawyuJ5Sv-ptQWqMvY
+  control_doc: 1eM32h7DXO9DuFVum-VmeqMjAuHrPNfTYLA-EXvyDF9Q
