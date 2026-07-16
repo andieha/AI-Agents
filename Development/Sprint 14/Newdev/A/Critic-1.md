@@ -23,8 +23,8 @@ system: |-
 
   4. Produce File 1 — Critic Review:
      Save a Google Doc titled "News Brief – [date] – Critic Review" to this folder:
-     https://drive.google.com/drive/folders/1wGffK4zcoBIvt0GbUFlQVTWudRfwukUO
-     (folder ID: 1wGffK4zcoBIvt0GbUFlQVTWudRfwukUO)
+     https://drive.google.com/drive/folders/11eXAoNKDbSdyH-k83OWRhC7EfNhJvF0a
+     (folder ID: 11eXAoNKDbSdyH-k83OWRhC7EfNhJvF0a)
      For each story in the original brief, write:
      - Story headline
      - Verdict: PASS / PARTIAL / FAIL
