@@ -19,31 +19,44 @@ system: |-
      If today is a weekend, stop: "No pipelines run on weekends."
      If nothing is ON for today, stop: "Nothing scheduled for [day] — check the Control spreadsheet."
 
-  3. Resolve each PIPELINE short name to its file path:
+  3. For each ON task, run the agents below in sequence.
+     Read each agent file to load its instructions before executing it.
+     Wait for each agent to finish before starting the next.
+     Pass FOCUS and SOURCES/RESEARCHERS as context to every agent in the sequence.
 
-     News      → Development/Newdev-1/Pipeline-News.md
-     Longevity → Development/Newdev-1/Pipeline-Longevity.md
-     YouTube   → Development/Newdev-1/YouTube.md
-     Research  → Development/Newdev-1/Pipeline-Research.md
-     General   → Development/Newdev-1/Brief-Collector.md
+     News
+       Agents: Development/Sprint 14/Newdev/A/News-1.md
+               Development/Sprint 14/Newdev/A/Critic-1.md
+               Development/Sprint 14/Newdev/A/TTS-1.md
+       Folders: output 1wGffK4zcoBIvt0GbUFlQVTWudRfwukUO
 
-  4. Resolve each SUBJECT to its Drive folder(s):
+     YouTube
+       Agents: Development/Newdev-1/YouTube.md
+       Folders: output 1g7Wcuqzd4XL1EIN7bD7LUwq_NR9C-1U2
 
-     News      → output:  1wGffK4zcoBIvt0GbUFlQVTWudRfwukUO
-     YouTube   → output:  1g7Wcuqzd4XL1EIN7bD7LUwq_NR9C-1U2
-     Longevity → staging: 1Qr8l-Iadr2qLSKeDh1ORX_EY9MhATifM
-                  output:  1EfZOO3PX-3Go4RYWE0pn_ePx3pVAvHzN
-     Research  → output:  1BhXEN6QpTfaBP0T9U0DMcKta4U2K3VRJ
-     General   → staging: 1WWEfjohYD0wC8z3tTIY-WqTOglRXfBtF
-                  output:  1Ybc2UKM7jmwRxL5woyu1dp76xcjH-vl1
+     Longevity
+       Agents: Development/Sprint 14/Newdev/A/Longevity-1.md
+               Development/Sprint 14/Newdev/A/Critic-Longevity.md
+               Development/Sprint 14/Newdev/A/TTS-Longevity.md
+       Folders: staging 1Qr8l-Iadr2qLSKeDh1ORX_EY9MhATifM
+                output  1EfZOO3PX-3Go4RYWE0pn_ePx3pVAvHzN
 
-  5. Run each ON task in order:
-     - Read the resolved pipeline file to load its instructions.
-     - Pass SUBJECT, FOCUS, SOURCES/RESEARCHERS, and the resolved folder IDs as context.
-     - For Research tasks: use the FOCUS column as the research topic.
-     - Wait for each task to finish before starting the next.
+     Research (use FOCUS column as the research topic)
+       Agents: Development/Fromgit/Planner.md
+               Development/Fromgit/Scout.md
+               Development/Fromgit/Analyzer.md
+               Development/Fromgit/Writer.md
+               Development/Fromgit/Critic.md
+       Folders: output 1BhXEN6QpTfaBP0T9U0DMcKta4U2K3VRJ
 
-  6. Report when done:
+     General
+       Agents: Development/Newdev-1/Brief-Collector.md
+               Development/Newdev-1/Fact-Checker.md
+               Development/Newdev-1/Speech-Converter.md
+       Folders: staging 1WWEfjohYD0wC8z3tTIY-WqTOglRXfBtF
+                output  1Ybc2UKM7jmwRxL5woyu1dp76xcjH-vl1
+
+  4. Report when done:
 
      [Day, Date]
      ✓ [Task] → [output title] ([file ID])
