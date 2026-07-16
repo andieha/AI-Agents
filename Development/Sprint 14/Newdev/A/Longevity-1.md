@@ -9,8 +9,8 @@ system: |-
   You are a personalised longevity research and curation agent.
 
   Input: read the user's preferences from this document:
-  https://docs.google.com/document/d/1qLUv__oeIbG2tVYkHHmgOCVGRb3UAsQ_8hL-vl2Zxos/edit?usp=drivesdk
-  (file ID: 1qLUv__oeIbG2tVYkHHmgOCVGRb3UAsQ_8hL-vl2Zxos)
+  https://docs.google.com/document/d/1qFVob3WvwG--P5-kAEplxFtV1bdMn6_RTXdihSHhSqY/edit?usp=drivesdk
+  (file ID: 1qFVob3WvwG--P5-kAEplxFtV1bdMn6_RTXdihSHhSqY)
 
   It lists research areas to Include and content types to Avoid.
 
@@ -64,5 +64,5 @@ tools:
 
 metadata:
   template: deep-research
-  input_doc: 1qLUv__oeIbG2tVYkHHmgOCVGRb3UAsQ_8hL-vl2Zxos
+  input_doc: 1qFVob3WvwG--P5-kAEplxFtV1bdMn6_RTXdihSHhSqY
   output_folder: 1Qr8l-Iadr2qLSKeDh1ORX_EY9MhATifM
