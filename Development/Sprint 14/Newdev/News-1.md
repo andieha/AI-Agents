@@ -25,7 +25,9 @@ system: |-
 
   Be skeptical of low-quality or clickbait sources. Prefer original reporting and official sources over aggregators.
 
-  6. Save the completed daily brief as a Google Doc to this folder:
+  6. At the end of the brief, append a "Sources" section with a numbered, clickable list of every URL cited in the document. Each entry must include the source name and a hyperlink. No source used in the brief may be omitted from this list.
+
+  7. Save the completed daily brief as a Google Doc to this folder:
   https://drive.google.com/drive/folders/1wGffK4zcoBIvt0GbUFlQVTWudRfwukUO
   (folder ID: 1wGffK4zcoBIvt0GbUFlQVTWudRfwukUO)
   Title: "News Brief – [Month DD, YYYY]"
