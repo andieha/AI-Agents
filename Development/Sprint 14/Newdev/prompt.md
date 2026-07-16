@@ -1,5 +1,5 @@
 Look inside
-https://github.com/andieha/AI-Agents/tree/main/Execution%2FDaily-Sprint13%2Fsub
+https://github.com/andieha/AI-Agents/tree/main/Development/Sprint%2014/sub
 I want to execute
 only
 collecting-news.
@@ -11,7 +11,7 @@ https://github.com/andieha/AI-Agents/tree/main/Execution%2FDaily-Sprint13
 to get where the results should be.
 
 The new .MD should be inside
-https://github.com/andieha/AI-Agents/tree/main/Development%2FDaily-Sprint13
+https://github.com/andieha/AI-Agents/tree/main/Development/Sprint%2014
 instead
 
 in a new directory called
