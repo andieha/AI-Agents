@@ -2,20 +2,13 @@
 
 **Trigger:** Type **Collect News**. No confirmation needed.
 
-## Google Drive Structure
+## Setup
 
-```
-100 AI Agents (folder ID: 1AAGGDZsJLGBLv3MgmOSMiJBkCthIwTId)
-└── 📁 Reports15  (folder ID: 1aa0mOKOM_n_z2VkpU8r-Q7HgoVfdD-p_)
-    └── 📁 Collection – [Month DD, YYYY]
-        ├── 🤖 AI News – [date]
-        ├── 🌍 Global News – [date]
-        └── 🇸🇪 Swedish News – [date]
-```
+Read `../start.md` to get the Google Drive folder structure and all folder IDs before proceeding.
 
 ## Step 1 — Create Collection Folder
 
-Check if a folder named `📁 Collection – [Month DD, YYYY]` (today's date) already exists inside Reports15 (folder ID: `1aa0mOKOM_n_z2VkpU8r-Q7HgoVfdD-p_`). Create it if it does not exist. Note the Collection folder ID.
+Check if a folder named `📁 Collection – [Month DD, YYYY]` (today's date) already exists inside Reports15 (folder ID from `../start.md`). Create it if it does not exist. Note the Collection folder ID.
 
 ## Step 2 — Collect News (parallel)
 
