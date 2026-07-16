@@ -24,7 +24,7 @@ Produce one cohesive spoken-word document:
 - Smooth spoken transition between sections
 - Plain text only — no markdown, no URLs, no bullet points
 - Written for natural spoken audio — flowing prose
-- Maximum 3,000 characters total
+- Maximum 9,000 characters total
 
 ## Step 4 — Save to Google Drive
 
