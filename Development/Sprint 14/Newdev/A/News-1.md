@@ -28,8 +28,8 @@ system: |-
   6. At the end of the brief, append a "Sources" section with a numbered, clickable list of every URL cited in the document. Each entry must include the source name and a hyperlink. No source used in the brief may be omitted from this list.
 
   7. Save the completed daily brief as a Google Doc to this folder:
-  https://drive.google.com/drive/folders/1wGffK4zcoBIvt0GbUFlQVTWudRfwukUO
-  (folder ID: 1wGffK4zcoBIvt0GbUFlQVTWudRfwukUO)
+  https://drive.google.com/drive/folders/11eXAoNKDbSdyH-k83OWRhC7EfNhJvF0a
+  (folder ID: 11eXAoNKDbSdyH-k83OWRhC7EfNhJvF0a)
   Title: "News Brief – [Month DD, YYYY]"
 
 tools:
@@ -38,4 +38,4 @@ tools:
 metadata:
   template: deep-research
   input_doc: https://docs.google.com/document/d/1qKFgkaBDbe7Qb3ysXz_nc6GYcsrxoxiu29EKxkPW7Eg/edit?usp=drivesdk
-  output_folder: 1wGffK4zcoBIvt0GbUFlQVTWudRfwukUO
+  output_folder: 11eXAoNKDbSdyH-k83OWRhC7EfNhJvF0a
