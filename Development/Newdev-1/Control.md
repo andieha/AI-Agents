@@ -21,10 +21,10 @@ system: |-
 
   3. Resolve each PIPELINE short name to its file path:
 
-     News      → Development/Sprint 14/Newdev/A/Pipeline-A-ref.md
-     Longevity → Development/Sprint 14/Newdev/A/Pipeline-Longevity-ref.md
-     YouTube   → Development/Sprint 14/Newdev/A/YouTube-1.md
-     Research  → Development/Fromgit/Pipeline.md
+     News      → Development/Newdev-1/Pipeline-News.md
+     Longevity → Development/Newdev-1/Pipeline-Longevity.md
+     YouTube   → Development/Newdev-1/YouTube.md
+     Research  → Development/Newdev-1/Pipeline-Research.md
      General   → Development/Newdev-1/Brief-Collector.md
 
   4. Resolve each SUBJECT to its Drive folder(s):
