@@ -13,8 +13,8 @@ system: |-
      Example: run code to get the current date and derive the weekday name from it.
 
   2. Open the Control spreadsheet:
-     https://docs.google.com/spreadsheets/d/1eM32h7DXO9DuFVum-VmeqMjAuHrPNfTYLA-EXvyDF9Q/edit
-     (file ID: 1eM32h7DXO9DuFVum-VmeqMjAuHrPNfTYLA-EXvyDF9Q)
+     https://docs.google.com/spreadsheets/d/17NcwbT6BbWKpnd32ZjSJcYSWYYRzMT_IutF6U2Ybz6U/edit
+     (file ID: 17NcwbT6BbWKpnd32ZjSJcYSWYYRzMT_IutF6U2Ybz6U)
 
      Columns: DAY · SUBJECT · TASK · PIPELINE · STATUS · FOCUS · SOURCES/RESEARCHERS · NOTES
      Find every row where DAY = today and STATUS = ON.
@@ -88,4 +88,4 @@ tools:
 
 metadata:
   template: daily-runner
-  control_doc: 1eM32h7DXO9DuFVum-VmeqMjAuHrPNfTYLA-EXvyDF9Q
+  control_doc: 17NcwbT6BbWKpnd32ZjSJcYSWYYRzMT_IutF6U2Ybz6U
