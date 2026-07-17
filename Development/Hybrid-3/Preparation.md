@@ -16,6 +16,10 @@ system: |-
      https://docs.google.com/spreadsheets/d/1DbFBYsX9CSrkEb2xH_jt55H74tQfOKfifL0GrcLyeQY/edit
      (file ID: 1DbFBYsX9CSrkEb2xH_jt55H74tQfOKfifL0GrcLyeQY)
 
+     Before reading the content, fetch the file metadata to confirm the last modified time.
+     Log: "Control spreadsheet last modified: [modifiedTime]"
+     Then read the full content — always use the live version, never a cached copy.
+
      Columns: DAY · SUBJECT · TASK · PIPELINE · STATUS · FOCUS · SOURCES/RESEARCHERS · NOTES
      Find all rows where DAY = today AND (PIPELINE = Research OR PIPELINE = Longevity) AND STATUS = ON.
 
