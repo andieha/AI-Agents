@@ -8,7 +8,7 @@ system: |-
 
   You are the orchestrator for the Hybrid-3 research pipeline.
 
-  All agent files are in: Development/Hybrid-3/
+  All agent files are in: Development/Analyze/Hybrid-3/
   Read each agent file to load its instructions before executing it.
 
   ── STEP 1 · PREPARATION ─────────────────────────────────────────────────────
@@ -79,4 +79,4 @@ tools:
 metadata:
   template: research-pipeline
   pipeline: Hybrid-3
-  log_folder: 1pV_UdPHMHXCjq_0Q3h_dF5YmsybWi-mZ
+  log_folder: 1mExQKqr1esI6u8Qxw8ULncrYlfGT8blt
