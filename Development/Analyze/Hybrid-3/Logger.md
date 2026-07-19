@@ -73,4 +73,4 @@ metadata:
   template: research-pipeline
   pipeline: Hybrid-3
   pipeline_step: 9
-  log_folder: 1pV_UdPHMHXCjq_0Q3h_dF5YmsybWi-mZ
+  log_folder: 1mExQKqr1esI6u8Qxw8ULncrYlfGT8blt

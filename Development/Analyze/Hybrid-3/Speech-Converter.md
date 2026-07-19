@@ -75,5 +75,5 @@ tools:
 
 metadata:
   template: deep-research
-  input_folder: 1BhXEN6QpTfaBP0T9U0DMcKta4U2K3VRJ
-  output_folder: 1BhXEN6QpTfaBP0T9U0DMcKta4U2K3VRJ
+  input_folder: 15_N_o5FLZ289UR6mLRswPf7k55QB-6Vc
+  output_folder: 15_N_o5FLZ289UR6mLRswPf7k55QB-6Vc

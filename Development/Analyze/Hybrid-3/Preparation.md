@@ -13,8 +13,8 @@ system: |-
      Example: from datetime import datetime; import zoneinfo; tz = zoneinfo.ZoneInfo('Europe/Stockholm'); now = datetime.now(tz); print(now.strftime('%A %Y-%m-%d'))
 
   2. Open the Control spreadsheet:
-     https://docs.google.com/spreadsheets/d/1DbFBYsX9CSrkEb2xH_jt55H74tQfOKfifL0GrcLyeQY/edit
-     (file ID: 1DbFBYsX9CSrkEb2xH_jt55H74tQfOKfifL0GrcLyeQY)
+     https://docs.google.com/spreadsheets/d/1cDHR6lf_Xm2uj0td_bgccZ8wCadlTSkTMhKqi27EUb0/edit
+     (file ID: 1cDHR6lf_Xm2uj0td_bgccZ8wCadlTSkTMhKqi27EUb0)
 
      Before reading the content, fetch the file metadata to confirm the last modified time.
      Log: "Control spreadsheet last modified: [modifiedTime]"
@@ -45,6 +45,6 @@ tools:
 
 metadata:
   template: research-pipeline
-  control_doc: 1DbFBYsX9CSrkEb2xH_jt55H74tQfOKfifL0GrcLyeQY
+  control_doc: 1cDHR6lf_Xm2uj0td_bgccZ8wCadlTSkTMhKqi27EUb0
   pipeline_step: 0
   next_step: Planner.md
