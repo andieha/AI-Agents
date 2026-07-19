@@ -9,7 +9,7 @@ Variants:
 
 ## Step 1 — Find Source Reports
 
-Search for today's Collection folder under Reports15 (Google Drive, folder ID: `1aa0mOKOM_n_z2VkpU8r-Q7HgoVfdD-p_`): look for a folder titled `📁 Collection – [target date]`. If it doesn't exist, say so and stop.
+Search for today's Collection folder under Reports15 (Google Drive, folder ID: `19LWpMihga0tvkaoFTaPpECkD3NMFCt5F`): look for a folder titled `📁 Collection – [target date]`. If it doesn't exist, say so and stop.
 
 Inside the Collection folder, find: all Daily Brief documents, all Investment Signal documents, and any other dated documents for the target date.
 

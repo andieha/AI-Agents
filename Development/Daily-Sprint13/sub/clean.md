@@ -10,7 +10,7 @@ Audits Collection folders under Reports15 and reports any that are older than 30
 
 ### 1 — List Collection folders
 
-Search inside Reports15 (Google Drive, folder ID: `1aa0mOKOM_n_z2VkpU8r-Q7HgoVfdD-p_`) for all folders whose name starts with `📁 Collection –`.
+Search inside Reports15 (Google Drive, folder ID: `19LWpMihga0tvkaoFTaPpECkD3NMFCt5F`) for all folders whose name starts with `📁 Collection –`.
 
 Use `mcp__Google_Drive__search_files` with a query like:
 `name contains 'Collection' and mimeType = 'application/vnd.google-apps.folder' and '[folder_id]' in parents`

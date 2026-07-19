@@ -7,10 +7,10 @@
 ```
 100 AI Agents (folder ID: 1AAGGDZsJLGBLv3MgmOSMiJBkCthIwTId)
 ├── 📁 Execution Log  (folder ID: 1fcIrmGBV1vO-KiD3vZDFZEx4N_grS80D)
-├── 📁 AI Agents Memory  (folder ID: 1TVTUon1jtQDNkH7OiANUvsTe015MNfec)
-├── 📁 Email  (folder ID: 12LVIpKZbFdWKltJOzclFtakeUqFsHqrn)
-│   └── Whitelist  (file ID: 1vs72H-ZCHILLXYu7XhX6dRmeNN57V0252UPtmvG0578)
-└── 📁 Reports15  (folder ID: 1aa0mOKOM_n_z2VkpU8r-Q7HgoVfdD-p_)
+├── 📁 AI Agents Memory  (folder ID: 1FWKfAMO0oD4K8s4xzM3U0MD7pok3TTg3)
+├── 📁 Email  (folder ID: 1xn75BXwd8JXstSOIGyNsuG25qbrtCsyL)
+│   └── Whitelist  (file ID: 1_uLlUehxCpd8PTEJtJxtw1eQ906x5SYcktbPlrhSijE)
+└── 📁 Reports15  (folder ID: 19LWpMihga0tvkaoFTaPpECkD3NMFCt5F)
     └── 📁 Collection – [Month DD, YYYY]
         ├── 🤖 AI News – [date]
         ├── 🌍 Global News – [date]
@@ -36,7 +36,7 @@ Admin → 🗃️ Cache (data source ID: 9b61968e-b3f5-4765-acde-f74ab98d109a)
 
 ## Before Step 1 — Create Collection Folder
 
-Create a folder titled `📁 Collection – [Month DD, YYYY]` inside Reports15 (Google Drive, folder ID: `1aa0mOKOM_n_z2VkpU8r-Q7HgoVfdD-p_`). This is the parent for all documents created in this run. Note the Collection Drive folder ID — all agents in Step 1 must save inside it.
+Create a folder titled `📁 Collection – [Month DD, YYYY]` inside Reports15 (Google Drive, folder ID: `19LWpMihga0tvkaoFTaPpECkD3NMFCt5F`). This is the parent for all documents created in this run. Note the Collection Drive folder ID — all agents in Step 1 must save inside it.
 
 ## Step 1 — Collect (parallel)
 
