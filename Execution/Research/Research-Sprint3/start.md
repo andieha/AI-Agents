@@ -44,6 +44,8 @@ For each topic (in parallel):
 
 You MUST delegate ALL research to sub-agents. You NEVER research yourself.
 
+All sub-agent paths (`sub/…`) are relative to the folder containing this file — resolve them from this file's location, never from another copy of the pipeline.
+
 Spawn all 4 researcher sub-agents IN PARALLEL for each topic — not sequential. For each: read `sub/researcher.md` then execute it, passing the topic name, the Research folder ID, the subtopic scope, and the EXACT doc title. The doc titles below are a contract — the analyst and report writer look these titles up verbatim, so pass them exactly as written:
 
 - **Subtopic A** — scope: market size, growth rates & forecasts
