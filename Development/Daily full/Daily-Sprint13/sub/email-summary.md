@@ -23,7 +23,7 @@ Report counts per category.
 ## Agent 2 — Research
 
 For each WHITELIST and ACTION NEEDED email:
-1. Search Notion — case pages, Social directory, Reports > Email Important
+1. Search Google Drive (Email Memory folder ID: `1FWKfAMO0oD4K8s4xzM3U0MD7pok3TTg3`) — check `Contacts`, `Flightright Case File`, and `Important` docs for context on this sender
 2. Search prior Gmail threads with this sender
 
 Extract: who they are, prior agreements, open commitments, relevant context.
@@ -48,13 +48,12 @@ All drafts follow these rules:
 
 ## Agent 4 — Log & Summarize
 
-Check if a folder named `Email-Results` exists inside the Collection folder using `mcp__Google_Drive__search_files` with query: `title = 'Email-Results' and '[Collection Drive folder ID]' in parents`. If it does not exist, create it using `mcp__Google_Drive__create_file` with `contentMimeType: application/vnd.google-apps.folder` and `parentId` = Collection Drive folder ID. Note its folder ID — this is the **Email-Results folder ID**.
+**Email Memory folder** (permanent, not inside Collection): Google Drive folder ID `1FWKfAMO0oD4K8s4xzM3U0MD7pok3TTg3`
 
-Log to Google Drive (Email-Results folder):
-- WHITELIST → update or append to the `Important` log doc inside the Email-Results folder
-- ACTION NEEDED → update or append to the `Important` log doc inside the Email-Results folder
-- Any active case (e.g. Flightright) → update or append to the relevant case file doc inside the Email-Results folder (e.g. `Flightright Case File`)
-- If the log doc does not exist yet in Email-Results, create it as a new Google Doc inside the Email-Results folder
+Log to Google Drive (Email Memory folder):
+- WHITELIST or ACTION NEEDED → append to `Important` doc (file ID: `1K83OcvWkjL9HLx5K9svgoeArTmEjPjMWnVZw0W7XAIY`) — format: `Date | Sender | Subject | Summary | Action taken`
+- Any active case (e.g. Flightright) → append to `Flightright Case File` doc (file ID: `1YMWyDVHSmEuo1qDWFJzZalnMSoybebxQ4fGpoc7ANG8`) with date and event
+- Other case types → search for matching doc by name in the Email Memory folder; create it if it does not exist
 
 Create a Google Doc **inside the Collection folder** (parent = Collection Drive folder ID):
 - Title: `📋 Email Summary – [Month DD, YYYY]`
@@ -65,6 +64,6 @@ Create a Google Doc **inside the Collection folder** (parent = Collection Drive 
 ## Error Handling
 
 - Gmail 5xx → wait 10s, retry 3×, then skip and report
-- Notion unavailable → Gmail draft only, add [NOTION UNAVAILABLE] to subject line
+- Google Drive unavailable → Gmail draft only, skip logging
 - Unclear email → flag as ⚠️ NEEDS MANUAL REVIEW, no draft
 - Email body stays untranslated; summaries in English

@@ -10,6 +10,10 @@
 ├── 📁 AI Agents Memory  (folder ID: 1FWKfAMO0oD4K8s4xzM3U0MD7pok3TTg3)
 ├── 📁 Email  (folder ID: 1xn75BXwd8JXstSOIGyNsuG25qbrtCsyL)
 │   └── Whitelist  (file ID: 1_uLlUehxCpd8PTEJtJxtw1eQ906x5SYcktbPlrhSijE)
+├── 📁 Email Memory  (folder ID: 1FWKfAMO0oD4K8s4xzM3U0MD7pok3TTg3)  ← persistent email context
+│   ├── Important  (file ID: 1K83OcvWkjL9HLx5K9svgoeArTmEjPjMWnVZw0W7XAIY)
+│   ├── Flightright Case File  (file ID: 1YMWyDVHSmEuo1qDWFJzZalnMSoybebxQ4fGpoc7ANG8)
+│   └── Contacts  (file ID: 1etlculH1YLMFnZ-vE8OIeWKn6VQfyezY204oJS3XoLQ)
 └── 📁 Reports15  (folder ID: 19LWpMihga0tvkaoFTaPpECkD3NMFCt5F)
     └── 📁 Collection – [Month DD, YYYY]
         ├── 🤖 AI News – [date]
@@ -17,9 +21,6 @@
         ├── 🇸🇪 Swedish News – [date]
         ├── 📡 Field Monitor Digest – Week [N], [YEAR]
         ├── 📋 Email Summary – [date]
-        ├── 📁 Email-Results (created if needed)
-        │   ├── Important
-        │   └── [Case] Case File (e.g. Flightright Case File)
         ├── 📰 Daily Brief – [date]
         ├── 📨 Newsletter Digest – [date] (Expanded)
         ├── Investment Signal – [desc] ([date])
