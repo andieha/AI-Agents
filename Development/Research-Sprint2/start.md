@@ -5,19 +5,22 @@
 ## Google Drive Structure
 
 ```
-100 AI Agents (folder ID: 1AAGGDZsJLGBLv3MgmOSMiJBkCthIwTId)
-├── 📁 Research  (folder ID: 15erYhF965pUgZddTedngq13s3ELUtGbM)
-│   └── White list  (file ID: 1q1PdRa6YIZKmiv8O6f6uMT-eWVbSZa-BhRjzr_rkoV8)
-└── 📁 Reports15  (folder ID: 1SMSqUNdvNd9UOXBS6Anmimakh6Qld_ic)
-    └── 📁 Collection – [Month DD, YYYY]
-        └── 📁 Research-Reports
-            └── 📁 [Topic] Research  (one per topic)
-                ├── Research Notes – [Topic] – Market Size & Growth
-                ├── Research Notes – [Topic] – Key Players & Funding
-                ├── Research Notes – [Topic] – Enterprise Adoption & Use Cases
-                ├── Research Notes – [Topic] – Technology & Infrastructure
-                ├── Data Summary – [Topic]
-                └── 📊 [Topic] Report – [date]
+📁 Research  (folder ID: 15erYhF965pUgZddTedngq13s3ELUtGbM)
+└── White list  (file ID: 1q1PdRa6YIZKmiv8O6f6uMT-eWVbSZa-BhRjzr_rkoV8)
+
+📁 Reports15  (folder ID: 1SMSqUNdvNd9UOXBS6Anmimakh6Qld_ic)
+└── 📁 Collection – [Month DD, YYYY]
+    └── 📁 Research-Reports
+        └── 📁 [Topic] Research  (one per topic)
+            ├── Research Notes – [Topic] – Market Size & Growth
+            ├── Research Notes – [Topic] – Key Players & Funding
+            ├── Research Notes – [Topic] – Enterprise Adoption & Use Cases
+            ├── Research Notes – [Topic] – Technology & Infrastructure
+            ├── Data Summary – [Topic]
+            └── 📊 [Topic] Report – [date]
+
+📁 Execution Log  (folder ID: 1FKlcrsC8pHNOHPN1kA6bITNce-cOlC3j)
+└── [Month DD, YYYY]  (one log entry per run)
 ```
 
 ## Before Step 1 — Read Topics
