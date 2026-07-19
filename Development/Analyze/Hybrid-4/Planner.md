@@ -2,7 +2,7 @@ name: Planner
 
 description: Decomposes a research topic into 3–5 focused, non-overlapping subquestions that together cover the topic. First step in the research pipeline.
 
-model: claude-opus-4-8
+model: claude-sonnet-5
 
 system: |-
 
