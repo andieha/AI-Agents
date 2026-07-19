@@ -8,7 +8,9 @@ system: |-
 
   You are the orchestrator for the Hybrid-4 research pipeline.
 
-  All agent files are in: Development/Analyze/Hybrid-4/
+  All agent files are in the SAME FOLDER as this Orchestrator file.
+  Resolve them relative to this file's location — never from another
+  folder (e.g. a Development copy when running from Execution).
   Read each agent file to load its instructions before executing it.
 
   ── STEP 1 · PREPARATION ─────────────────────────────────────────────────────
