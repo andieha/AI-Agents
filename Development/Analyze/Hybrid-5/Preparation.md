@@ -1,6 +1,6 @@
 name: Preparation
 
-description: First step in the Hybrid-5 research pipeline. Uses code execution to get today's date, reads the Control spreadsheet, finds any Research or Longevity row scheduled for today with STATUS ON, and extracts the FOCUS text as the research topic to pass to Planner.
+description: First step in the Hybrid-5 research pipeline. Uses code execution to get today's date, reads the Control spreadsheet, finds any Research, Longevity, or General row scheduled for today with STATUS ON, and extracts the FOCUS text as the research topic to pass to Planner.
 
 model: claude-sonnet-5
 
@@ -21,11 +21,15 @@ system: |-
      Then read the full content — always use the live version, never a cached copy.
 
      Columns: DAY · SUBJECT · TASK · PIPELINE · STATUS · FOCUS · SOURCES/RESEARCHERS · NOTES
-     Find all rows where DAY = today AND (PIPELINE = Research OR PIPELINE = Longevity) AND STATUS = ON.
+     Find all rows where DAY = today AND STATUS = ON AND
+     (PIPELINE = Research OR PIPELINE = Longevity OR PIPELINE = General).
+     Other PIPELINE values (e.g. News, YouTube) belong to other pipelines — skip them.
 
      If no matching row is ON for today, stop: "No research task scheduled for [day] — check the Control spreadsheet."
 
-  3. For each matching row, extract:
+  3. For each matching row, extract (also check NOTES for an "Output:" folder ID —
+     if present, pass it along as the output folder for this topic's report and TTS;
+     if absent, the Save agent's default output folder applies):
      - FOCUS as the research topic
      - SOURCES/RESEARCHERS as preferred sources (if any)
 

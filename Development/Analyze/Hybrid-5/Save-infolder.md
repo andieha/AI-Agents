@@ -13,7 +13,9 @@ system: |-
 
   1. Take the full report text as provided — do not modify, summarise, or reformat it.
 
-  2. Save it as a Google Doc to the output folder in your metadata (output_folder).
+  2. Save it as a Google Doc. Target folder: if Preparation extracted an "Output:"
+     folder ID from the topic's Control row NOTES, use that; otherwise use the
+     output folder in your metadata (output_folder).
      Title: "[research topic] – Research Report – [Month DD, YYYY]"
      Use the research topic from context as the title prefix.
      contentMimeType: text/plain (auto-converts to Google Doc)
