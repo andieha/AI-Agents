@@ -1,8 +1,33 @@
 # Plan: Unified suite — Brief + Mail + Invest on shared Common agents
 
-Status: **built and smoke-tested (Invest, partial — see below)**. This file is the
-durable copy of a plan first drafted in a local plan-mode session (which does not
-survive container recycling); committing it here keeps it available across sessions.
+Status: **built and fully live-tested — all three products (Invest, Mail, Brief) ran
+end-to-end successfully on 2026-07-20**. This file is the durable copy of a plan first
+drafted in a local plan-mode session (which does not survive container recycling);
+committing it here keeps it available across sessions.
+
+## Update — full end-to-end validation (2026-07-20, continued)
+
+After the Invest fix below, Mail and Brief were also run live for the first time:
+
+- **Mail**: 21 real Gmail threads triaged (4 whitelist, 0 action needed, 0 drafts —
+  all whitelist items were routine Flightright status updates); 3 newsletters matched
+  the Digest/Brief subject filter and were expanded, with one correctly flagged as a
+  content-free teaser rather than fabricated, per Newsletter-Digest's own rule.
+- **Brief**: all three collectors (News, Field Monitor, Daily Brief) ran in parallel
+  using live web research and real market data (via FMP), Clean found nothing stale,
+  and — critically — **Aggregated-Report correctly picked up all 10 documents already
+  in the shared Collection folder from Invest's and Mail's earlier runs that same
+  day**, confirming the cross-product shared-folder design works regardless of run
+  order. Speech-Converter produced an 8,078-character narration, under the 10,000
+  limit with no trimming needed.
+- Both products' Logger and Cache-Update steps correctly merged into the SAME Notion
+  Cache row Invest had already written earlier, without clobbering Invest's or
+  Daily-Sprint15's bullets, respecting the 5-bullet cap by trimming as new products
+  added their own lines.
+
+No bugs found beyond the append/update constraint already fixed. The suite is
+considered validated; remaining follow-ups are the ones noted in Description.md
+(Daily-Sprint15/Hybrid-5 likely have the same append-to-Doc gap, not yet fixed there).
 
 ## Update — live-test finding and fix (2026-07-20)
 
