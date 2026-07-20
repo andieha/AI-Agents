@@ -91,8 +91,15 @@ therefore only **reads** these existing docs in **Daily full / 2 Work**
 - `Important` (file ID `1K83OcvWkjL9HLx5K9svgoeArTmEjPjMWnVZw0W7XAIY`)
 - `Flightright Case File` (file ID `1YMWyDVHSmEuo1qDWFJzZalnMSoybebxQ4fGpoc7ANG8`)
 - `Contacts` (file ID `1etlculH1YLMFnZ-vE8OIeWKn6VQfyezY204oJS3XoLQ`)
-- The email **Whitelist** in **Daily full / 1 In** (file ID
-  `1_uLlUehxCpd8PTEJtJxtw1eQ906x5SYcktbPlrhSijE`)
+
+The email **Whitelist** is NOT shared — Unified keeps its own copy,
+`Whitelist` (file ID `1dSbcu3kuj16d8c2DhjEiUb5WTz3R5REsb_e4YkHweg8`) in its own
+`1 In`, copied from Daily-Sprint15's original at creation time. Unlike
+`Important`/`Flightright Case File`/`Contacts`, this is a small static config
+file, not a growing shared history — duplicating it doesn't fork any real
+context, so it made sense to own it outright. Edit Unified's copy directly to
+change what Mail treats as WHITELIST; it no longer affects or is affected by
+Daily-Sprint15's whitelist.
 
 Invest's news/analysis history is NOT shared with Daily-Sprint15 — it keeps
 its own dated docs in Unified's `2 Work` (see above), since a shared *written*

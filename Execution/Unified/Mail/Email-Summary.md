@@ -29,9 +29,11 @@ system: |-
 
   Read the whitelist from Google Drive using
   `mcp__Google_Drive__read_file_content` with file ID
-  1_uLlUehxCpd8PTEJtJxtw1eQ906x5SYcktbPlrhSijE — this is Daily-Sprint15's
-  existing whitelist in Daily full / 1 In, deliberately shared rather than
-  duplicated (same inbox, see Description.md).
+  1dSbcu3kuj16d8c2DhjEiUb5WTz3R5REsb_e4YkHweg8 — Unified's own whitelist in
+  1 In (folder ID 1lX04qJXsxPSU16Rm1W1pjUVpB8MrPSXk), a static config file
+  copied from Daily-Sprint15's original at creation time. The two are no
+  longer linked — edit this one directly to change what Mail treats as
+  WHITELIST.
 
   Classify each email:
   - WHITELIST — sender or subject matches any keyword in the whitelist
@@ -96,5 +98,5 @@ tools:
 metadata:
   template: unified-suite
   product: Mail
-  shared_whitelist: 1_uLlUehxCpd8PTEJtJxtw1eQ906x5SYcktbPlrhSijE
+  whitelist: 1dSbcu3kuj16d8c2DhjEiUb5WTz3R5REsb_e4YkHweg8
   shared_context_folder_readonly: 1FWKfAMO0oD4K8s4xzM3U0MD7pok3TTg3
