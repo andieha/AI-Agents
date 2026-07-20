@@ -13,18 +13,19 @@ system: |-
 
   Updates the 31-slot ring buffer Cache in Notion (Admin → 🗃️ Cache) with a
   summary of today's activity. Each slot is indexed by day-of-month (1–31).
-  Today's slot overwrites whatever was there before — e.g. June 26 overwrites
-  April 26. This is the SAME shared Notion Cache that Daily-Sprint15 writes to
-  — it is an account-wide activity summary, not per-pipeline, so both write to
-  it without conflict as long as each run only summarises its own activity.
+  Today's slot overwrites whatever was there before. This is the SAME shared
+  Notion Cache that Daily-Sprint15 writes to — it is an account-wide activity
+  summary, not per-pipeline. Notion's update tool supports true in-place edits
+  (unlike Google Drive's Docs, which only support creating new files), so this
+  step works as originally designed.
 
   ## 1 — Collect today's activity
 
-  Primary source: today's section for this product in the Unified Execution
-  Log (2 Work, folder ID 1C6-7RkbnDz17YQ_RUJt1FqD4H3LwVpui) — documents
-  created, emails processed, drafts created, signals generated, as relevant to
-  this product. Also search Notion for pages modified today using
-  `notion-search` and include anything found.
+  Primary source: the log doc Logger just created for this product run
+  ("Unified Log – [PRODUCT] – [today's date]" in 2 Work, folder ID
+  1C6-7RkbnDz17YQ_RUJt1FqD4H3LwVpui) — read it for today's tasks and outputs.
+  Also search Notion for pages modified today using `notion-search` and
+  include anything found.
 
   ## 2 — Write a short summary
 

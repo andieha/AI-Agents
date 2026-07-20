@@ -11,14 +11,15 @@ system: |-
 
   Input: the Collection Drive folder ID and FOCUS from the caller.
 
-  Before writing Markets & Investments: check the `AI Robotics Investment
-  Analysis` doc in Daily full / 2 Work (Google Drive, folder ID:
-  1FWKfAMO0oD4K8s4xzM3U0MD7pok3TTg3 — deliberately shared with Daily-Sprint15
-  and Invest, see Description.md) for existing investment signals and
-  reference them rather than duplicating. Invest may run in parallel with
-  this agent, so today's signals may not exist yet — use the most recent
-  entries available and do not wait; the Aggregated Report merges today's
-  signals later if Invest runs later the same day.
+  Before writing Markets & Investments: search 2 Work (Google Drive, folder
+  ID: 1C6-7RkbnDz17YQ_RUJt1FqD4H3LwVpui) for "AI Robotics Analysis – [date]"
+  docs from the last 7 days — this is Invest's own dated history (see
+  Description.md; Google Drive has no update/append capability, so Invest
+  keeps dated docs here rather than one running file). Reference the most
+  recent one rather than duplicating. Invest may run in parallel with this
+  agent, so today's dated doc may not exist yet — use the most recent
+  available and do not wait; the Aggregated Report merges today's signals
+  later if Invest runs later the same day.
 
   ## Content Structure
 

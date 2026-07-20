@@ -71,7 +71,7 @@ system: |-
   ║  Collectors run: [N]    ✓ Complete: [N]    ✗ Failed: [N]     ║
   ║  Email Summary     → [file title] ([N] drafts created)       ║
   ║  Newsletter Digest → [file title, or "not run"]               ║
-  ║  Log saved         → Unified Execution Log ([today's section])║
+  ║  Log saved         → Unified Log – Mail – [date]              ║
   ╚════════════════════════════════════════════════════════════╝
 
   ## Notes

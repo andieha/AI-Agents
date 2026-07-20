@@ -20,7 +20,9 @@ pattern already used by Daily full / Analyze / Research:
     ├── 📁 1 In    (folder ID: 1lX04qJXsxPSU16Rm1W1pjUVpB8MrPSXk)
     │   └── Unified Control  (spreadsheet ID: 1WPOBj3VlJMLr-x5lpDKlmO4X9GFIFXvPBMM_bX3TId8)
     ├── 📁 2 Work  (folder ID: 1C6-7RkbnDz17YQ_RUJt1FqD4H3LwVpui)
-    │   └── Unified Execution Log  (Google Doc — created on first Logger run, then reused)
+    │   ├── Unified Log – [Product] – [date]  (Google Doc, one per run — Logger)
+    │   ├── AI Robotics News – [date]  (Google Doc, one per run — Invest, dated history)
+    │   └── AI Robotics Analysis – [date]  (Google Doc, one per run — Invest, dated history)
     └── 📁 3 Out   (folder ID: 1hKGLJa8cksuMGhHanSUh-VesOYLx_Pqo)
         └── 📁 Collection – [Month DD, YYYY]   (one per day, shared by all three products)
             ├── 🤖 AI News – [date]  /  🌍 Global News – [date]  /  🇸🇪 Swedish News – [date]
@@ -38,27 +40,60 @@ Daily-Sprint15 and the Unified suite on the same day produces two independent
 Collection folders (one under each tree). This lets the suite be developed and
 proven without touching Daily-Sprint15's live output.
 
-### Deliberately shared with Daily-Sprint15 (NOT duplicated)
+### A hard constraint that shaped this design: no update/append in Google Drive
 
-Anders has one Gmail inbox and one set of real contacts/cases — duplicating that
-context under Unified's own `2 Work` would fork it into two diverging copies.
-Mail and Invest therefore read/write these specific existing docs in
-**Daily full / 2 Work** (folder ID `1FWKfAMO0oD4K8s4xzM3U0MD7pok3TTg3`) rather than
-creating fresh ones:
+Discovered during the first live test run: the Google Drive toolset can create
+new Docs, copy, read, search, and fetch metadata — but it has **no way to
+update or append to an existing Doc's content**. Every "append to a running
+doc" pattern this suite (and, it turns out, Daily-Sprint15 and Hybrid-5) was
+originally written with assumed a capability that doesn't exist here.
+
+The fix applied throughout Unified: **never try to mutate an existing Doc —
+always create a new dated one, and read recent history (typically the last 7
+days) when continuity or deduplication is needed.** This is exactly the
+pattern already proven elsewhere in this repo for Collection folders and
+Investment Signal documents; it's just applied consistently now. Concretely:
+- `Common/Logger.md` creates a new "Unified Log – [Product] – [date]" doc per
+  run instead of editing one running Execution Log.
+- `Invest/Investment-Signals.md` keeps its own "AI Robotics News – [date]" /
+  "AI Robotics Analysis – [date]" docs in Unified's own `2 Work`, reading the
+  last 7 days for dedup, instead of appending to Daily-Sprint15's single
+  running docs.
+- `Mail/Email-Summary.md` no longer tries to append to Daily-Sprint15's
+  `Important` / `Flightright Case File` docs — it still reads them for
+  context, but today's durable record is the dated Email Summary doc it
+  already saves into the Collection folder.
+
+Notion's tools DO support true in-place updates (`insert_content`/
+`update_content`), which is why `Common/Cache-Update.md` still updates the
+shared Notion ring buffer as originally designed — the constraint is specific
+to Google Docs, not Notion.
+
+### Deliberately shared with Daily-Sprint15 (read-only, NOT duplicated or written to)
+
+Anders has one Gmail inbox and one set of real contacts/cases — duplicating
+that context under Unified's own `2 Work` would fork it into two diverging
+copies, and Unified can't write to Daily's docs anyway (see above). Mail
+therefore only **reads** these existing docs in **Daily full / 2 Work**
+(folder ID `1FWKfAMO0oD4K8s4xzM3U0MD7pok3TTg3`) for context:
 
 - `Important` (file ID `1K83OcvWkjL9HLx5K9svgoeArTmEjPjMWnVZw0W7XAIY`)
 - `Flightright Case File` (file ID `1YMWyDVHSmEuo1qDWFJzZalnMSoybebxQ4fGpoc7ANG8`)
 - `Contacts` (file ID `1etlculH1YLMFnZ-vE8OIeWKn6VQfyezY204oJS3XoLQ`)
-- `AI Robotics News Feed` and `AI Robotics Investment Analysis` (searched by name
-  in the same `2 Work` folder)
 - The email **Whitelist** in **Daily full / 1 In** (file ID
   `1_uLlUehxCpd8PTEJtJxtw1eQ906x5SYcktbPlrhSijE`)
-- The Notion Cache ring buffer (`Admin → 🗃️ Cache`, data source ID
-  `9b61968e-b3f5-4765-acde-f74ab98d109a`) — one account-wide activity cache,
-  shared by every pipeline, not per-product
 
-Everything else (the Control sheet, the Execution Log, the Collection folders)
-is owned by Unified's own tree above.
+Invest's news/analysis history is NOT shared with Daily-Sprint15 — it keeps
+its own dated docs in Unified's `2 Work` (see above), since a shared *written*
+history isn't possible without update support.
+
+The Notion Cache ring buffer (`Admin → 🗃️ Cache`, data source ID
+`9b61968e-b3f5-4765-acde-f74ab98d109a`) remains shared and read-write, since
+Notion supports real updates — it's one account-wide activity cache, not
+per-product.
+
+Everything else (the Control sheet, the dated Logs, the Collection folders,
+Invest's own news/analysis history) is owned by Unified's own tree above.
 
 ## What each product does
 
@@ -102,11 +137,10 @@ Control sheet.
 
 ## Logging
 
-`Common/Logger.md` writes to ONE running "Unified Execution Log" doc in `2 Work`
-— created on its first run, then reused by file ID. Each day gets one heading;
-each product that runs that day gets one section under it, overwritten if that
-product reruns. This replaces the one-doc-per-day-per-pipeline pattern
-Daily-Sprint15 and Hybrid-5 each use separately.
+`Common/Logger.md` creates a new dated "Unified Log – [Product] – [date]" doc
+in `2 Work` for every run (Google Drive cannot update an existing Doc — see
+below). A rerun of the same product on the same day simply creates a second
+doc with that day's title.
 
 ## Status
 

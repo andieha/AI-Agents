@@ -1,9 +1,32 @@
 # Plan: Unified suite — Brief + Mail + Invest on shared Common agents
 
-Status: **shelved / not yet built**. This file is the durable copy of a plan first
-drafted in a local plan-mode session (which does not survive container recycling);
-committing it here keeps it available across sessions. The Drive footprint below is
-already live — only the agent-file folder structure remains to be built.
+Status: **built and smoke-tested (Invest, partial — see below)**. This file is the
+durable copy of a plan first drafted in a local plan-mode session (which does not
+survive container recycling); committing it here keeps it available across sessions.
+
+## Update — live-test finding and fix (2026-07-20)
+
+Running `Start Invest` end-to-end surfaced a real constraint: the Google Drive
+toolset has no way to update or append to an existing Doc, only create new ones —
+so every "append to a running doc" instruction ported from Daily-Sprint15/Hybrid-5
+(Logger's Execution Log, Investment-Signals' News Feed/Analysis docs,
+Email-Summary's `Important` log) was unexecutable as written. This is a
+pre-existing gap in those source pipelines too, not something introduced here.
+
+Fix applied to every Unified file: never mutate an existing Doc — always create a
+new dated one, and read the last 7 days of history when continuity/dedup is
+needed. This is the same pattern already proven for Collection folders and
+Investment Signal documents. Concretely: Logger now creates
+"Unified Log – [Product] – [date]" per run; Investment-Signals keeps its own
+"AI Robotics News – [date]" / "AI Robotics Analysis – [date]" docs in Unified's
+own `2 Work` (no longer shared with Daily-Sprint15's docs, since a shared
+*written* history isn't possible without update support); Email-Summary still
+reads Daily's `Important`/`Flightright Case File`/`Contacts` for context but no
+longer tries to write to them. Notion's Cache ring buffer is unaffected — Notion
+does support real in-place updates.
+
+Daily-Sprint15 and Hybrid-5 were NOT touched by this fix — same latent gap likely
+exists there, treated as a separate follow-up if/when raised.
 
 ## Context
 

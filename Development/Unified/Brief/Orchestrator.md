@@ -86,7 +86,7 @@ system: |-
   ║  Collectors run: [N]    ✓ Complete: [N]    ✗ Failed: [N]     ║
   ║  Aggregated Report → [file title]                            ║
   ║  Narrated TTS      → [file title] ([char count] chars)       ║
-  ║  Log saved         → Unified Execution Log ([today's section])║
+  ║  Log saved         → Unified Log – Brief – [date]             ║
   ╚════════════════════════════════════════════════════════════╝
 
   ## Notes

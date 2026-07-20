@@ -61,7 +61,7 @@ system: |-
   ╠════════════════════════════════════════════════════════════╣
   ║  Status: [✓ Complete / ✗ Failed]                              ║
   ║  Signals created → [N] ([list of Investment Signal titles])  ║
-  ║  Log saved       → Unified Execution Log ([today's section]) ║
+  ║  Log saved       → Unified Log – Invest – [date]              ║
   ╚════════════════════════════════════════════════════════════╝
 
   ## Notes
