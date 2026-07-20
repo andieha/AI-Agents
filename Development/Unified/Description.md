@@ -6,8 +6,17 @@ Cache-Update) instead of each product duplicating its own copies, the way
 Daily-Sprint15 and Hybrid-5 currently do. Research (Hybrid-5) is intentionally
 NOT part of this suite — it stays a separate product with its own Control sheet.
 
-Triggers: **Start Brief** / **Start Mail** / **Start Invest**. Each is independent
-— run one, two, or all three on any given day. No confirmation needed for any of them.
+Triggers: **Start Brief** / **Start Mail** / **Start Invest** run one product each,
+independently — run one, two, or all three on any given day. No confirmation
+needed for any of them.
+
+**Start Unified** (`Orchestrator.md`, in this same folder) runs all three in strict
+sequence — Invest, then Mail, then Brief — and is designed to be safe to invoke from
+a scheduled routine with zero prior conversation context: the file itself states its
+own authorization and safety boundaries (research/logging only, drafts never sent,
+no trades), so a cold session pointed at this exact file path doesn't need to guess
+what "Start Invest" means or ask for confirmation. Point any scheduled routine at
+`Execution/Unified/Orchestrator.md` rather than passing a bare trigger phrase.
 
 ## Google Drive Structure
 
