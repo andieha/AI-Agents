@@ -18,8 +18,8 @@ system: |-
      Example: from datetime import datetime; import zoneinfo; tz = zoneinfo.ZoneInfo('Europe/Stockholm'); now = datetime.now(tz); print(now.strftime('%A %Y-%m-%d'))
 
   2. Open the Unified Control spreadsheet:
-     https://docs.google.com/spreadsheets/d/1WPOBj3VlJMLr-x5lpDKlmO4X9GFIFXvPBMM_bX3TId8/edit
-     (file ID: 1WPOBj3VlJMLr-x5lpDKlmO4X9GFIFXvPBMM_bX3TId8)
+     https://docs.google.com/spreadsheets/d/1yx5HqhSihf-UCIp0WEgIw8_ecGa_I0xSEnLnW5vMjhg/edit
+     (file ID: 1yx5HqhSihf-UCIp0WEgIw8_ecGa_I0xSEnLnW5vMjhg)
 
      Before reading the content, fetch the file metadata to confirm the last
      modified time. Log: "Control spreadsheet last modified: [modifiedTime]"
@@ -57,4 +57,4 @@ tools:
 
 metadata:
   template: unified-suite
-  control_doc: 1WPOBj3VlJMLr-x5lpDKlmO4X9GFIFXvPBMM_bX3TId8
+  control_doc: 1yx5HqhSihf-UCIp0WEgIw8_ecGa_I0xSEnLnW5vMjhg

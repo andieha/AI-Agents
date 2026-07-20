@@ -18,7 +18,7 @@ pattern already used by Daily full / Analyze / Research:
 500 Data (folder ID: 1XNEmHdIfyyRLZfflOVIitmif5auMmUxL)
 └── Unified (folder ID: 1VSra0jdBzngkVCG_uZo8hzfG8DmtbYm4)
     ├── 📁 1 In    (folder ID: 1lX04qJXsxPSU16Rm1W1pjUVpB8MrPSXk)
-    │   └── Unified Control  (spreadsheet ID: 1WPOBj3VlJMLr-x5lpDKlmO4X9GFIFXvPBMM_bX3TId8)
+    │   └── Unified Control  (spreadsheet ID: 1yx5HqhSihf-UCIp0WEgIw8_ecGa_I0xSEnLnW5vMjhg)
     ├── 📁 2 Work  (folder ID: 1C6-7RkbnDz17YQ_RUJt1FqD4H3LwVpui)
     │   ├── Unified Log – [Product] – [date]  (Google Doc, one per run — Logger)
     │   ├── AI Robotics News – [date]  (Google Doc, one per run — Invest, dated history)
@@ -114,11 +114,9 @@ BOTZ/ROBO, NVDA/ASML/Samsung, ASTS/RKLB), then Logger + Cache-Update.
 
 ## Control sheet
 
-`Unified Control` (spreadsheet ID `1WPOBj3VlJMLr-x5lpDKlmO4X9GFIFXvPBMM_bX3TId8`,
-in `1 In`) is a copy of the original research Control sheet
-(`1cDHR6lf_Xm2uj0td_bgccZ8wCadlTSkTMhKqi27EUb0`, untouched, still used by
-Hybrid-5) plus a **PRODUCT** column and six new rows — one per collector, all
-DAY=Daily, STATUS=ON:
+`Unified Control` (spreadsheet ID `1yx5HqhSihf-UCIp0WEgIw8_ecGa_I0xSEnLnW5vMjhg`,
+in `1 In`) contains ONLY the six rows Unified's Preparation actually reads — one
+per collector, all DAY=Daily, STATUS=ON:
 
 | PRODUCT | PIPELINE | TASK |
 |---|---|---|
@@ -129,11 +127,19 @@ DAY=Daily, STATUS=ON:
 | Mail | Newsletter | Newsletter Digest (Expand) |
 | Invest | Signals | AI/Robotics Investment Signals |
 
-Original Research/Longevity/News/YouTube/General rows are tagged with PRODUCT
-(`Research` or blank) for readability only — Unified's Preparation ignores every
-row whose PRODUCT doesn't match the product it was asked about. Edit FOCUS,
-STATUS, or DAY on any row to change what runs and when, same as the original
-Control sheet.
+Edit FOCUS, STATUS, or DAY on any row to change what runs and when.
+
+An earlier version of this sheet was created as a straight copy of Hybrid-5's own
+Control sheet (`1cDHR6lf_Xm2uj0td_bgccZ8wCadlTSkTMhKqi27EUb0`, untouched, still
+used by Hybrid-5 today) with a PRODUCT column added, keeping all 25 of Hybrid-5's
+Research/Longevity/News/YouTube/General rows for "readability." In practice this
+was just clutter — Unified's Preparation only ever matched the 6 tagged rows, and
+the 19 blank-PRODUCT legacy rows (including two Monday rows, News and YouTube,
+that don't map to anything anywhere) were confusing to read and never did
+anything. That version (file ID `1WPOBj3VlJMLr-x5lpDKlmO4X9GFIFXvPBMM_bX3TId8`)
+has been replaced by this 6-row version; the old file has no update/delete tool
+available to clean it up automatically (see the constraint above) and should be
+deleted manually from Drive.
 
 ## Logging
 

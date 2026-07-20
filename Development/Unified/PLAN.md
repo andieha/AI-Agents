@@ -5,6 +5,20 @@ end-to-end successfully on 2026-07-20**. This file is the durable copy of a plan
 drafted in a local plan-mode session (which does not survive container recycling);
 committing it here keeps it available across sessions.
 
+## Update — Control sheet cleanup (2026-07-20, continued)
+
+The live-tested sheet carried 25 rows copied wholesale from Hybrid-5's own
+Control sheet, kept "for readability." This backfired: two of those rows
+(Monday News, Monday YouTube — both blank PRODUCT) looked like they should do
+something but were orphans, matching no product's Preparation filter and never
+wired to anything under Hybrid-5 either. Rather than leave 19 dead rows sitting
+next to the 6 real ones, the sheet was rebuilt containing ONLY the 6 rows
+Unified reads. New file ID: `1yx5HqhSihf-UCIp0WEgIw8_ecGa_I0xSEnLnW5vMjhg`
+(replacing `1WPOBj3VlJMLr-x5lpDKlmO4X9GFIFXvPBMM_bX3TId8`, which cannot be
+deleted automatically — no delete tool exists — and needs manual removal from
+Drive). All three agent files referencing the old ID (`Common/Preparation.md`,
+`Description.md`, this file) were updated to the new one.
+
 ## Update — full end-to-end validation (2026-07-20, continued)
 
 After the Invest fix below, Mail and Brief were also run live for the first time:
@@ -83,14 +97,13 @@ alongside the existing `Daily full`, `Analyze`, and `Research` trees:
 ```
 
 **Unified Control** sheet — created in `1 In`:
-`https://docs.google.com/spreadsheets/d/1WPOBj3VlJMLr-x5lpDKlmO4X9GFIFXvPBMM_bX3TId8/edit`
-(file ID `1WPOBj3VlJMLr-x5lpDKlmO4X9GFIFXvPBMM_bX3TId8`)
+`https://docs.google.com/spreadsheets/d/1yx5HqhSihf-UCIp0WEgIw8_ecGa_I0xSEnLnW5vMjhg/edit`
+(file ID `1yx5HqhSihf-UCIp0WEgIw8_ecGa_I0xSEnLnW5vMjhg`)
 
-Content: a copy of the original Control sheet's 25 rows (the one Hybrid-5 reads,
-ID `1cDHR6lf_Xm2uj0td_bgccZ8wCadlTSkTMhKqi27EUb0`, untouched) with a new **PRODUCT**
-column added (`Research` on Research/Longevity rows, blank on News/YouTube/General
-rows — informational only, not read by the suite), plus six new rows added at the
-bottom, one per collector, all DAY=Daily, STATUS=ON:
+Content: ONLY the six rows Unified's Preparation actually reads, one per
+collector, all DAY=Daily, STATUS=ON (an earlier version copied all 25 rows from
+Hybrid-5's own Control sheet with a PRODUCT column added — cleaned up on
+2026-07-20, see below, since none of those 25 rows were ever read by Unified):
 
 | PRODUCT | PIPELINE | TASK |
 |---|---|---|
@@ -109,7 +122,7 @@ default scope — edit in place to override without touching agent files.
 ```
 Description.md            suite overview, triggers, Drive tree, Control-sheet spec
 Common/
-  Preparation.md          reads Unified Control sheet (1WPOBj3VlJMLr-x5lpDKlmO4X9GFIFXvPBMM_bX3TId8);
+  Preparation.md          reads Unified Control sheet (1yx5HqhSihf-UCIp0WEgIw8_ecGa_I0xSEnLnW5vMjhg);
                           input: PRODUCT name; returns that product's rows for today
                           (STATUS=ON, DAY matches; DAY=Daily means every day)
   Save-infolder.md        generalized: report text + title + target folder ID
