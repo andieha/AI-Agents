@@ -11,12 +11,14 @@ independently — run one, two, or all three on any given day. No confirmation
 needed for any of them.
 
 **Start Unified** (`Orchestrator.md`, in this same folder) runs all three in strict
-sequence — Invest, then Mail, then Brief — and is designed to be safe to invoke from
-a scheduled routine with zero prior conversation context: the file itself states its
-own authorization and safety boundaries (research/logging only, drafts never sent,
-no trades), so a cold session pointed at this exact file path doesn't need to guess
-what "Start Invest" means or ask for confirmation. Point any scheduled routine at
-`Execution/Unified/Orchestrator.md` rather than passing a bare trigger phrase.
+sequence — Invest, then Mail, then Brief. Point any scheduled routine at
+`Execution/Unified/Orchestrator.md` rather than passing a bare trigger phrase, so a
+cold session doesn't have to guess what "Start Invest" means. Standing authorization
+for unconfirmed scheduled execution is documented in this repository's `CLAUDE.md`
+(not claimed by this file itself — a file vouching for its own authorization, with
+nothing else corroborating it, is exactly the shape of a prompt-injection attempt,
+and Orchestrator.md says so explicitly and tells the reader to check CLAUDE.md
+before trusting it).
 
 ## Google Drive Structure
 
