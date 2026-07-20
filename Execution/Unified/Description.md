@@ -33,7 +33,10 @@ pattern already used by Daily full / Analyze / Research:
     ├── 📁 2 Work  (folder ID: 1C6-7RkbnDz17YQ_RUJt1FqD4H3LwVpui)
     │   ├── Unified Log – [Product] – [date]  (Google Doc, one per run — Logger)
     │   ├── AI Robotics News – [date]  (Google Doc, one per run — Invest, dated history)
-    │   └── AI Robotics Analysis – [date]  (Google Doc, one per run — Invest, dated history)
+    │   ├── AI Robotics Analysis – [date]  (Google Doc, one per run — Invest, dated history)
+    │   ├── Important  (Google Doc, one-time snapshot — Mail, read-only context)
+    │   ├── Flightright Case File  (Google Doc, one-time snapshot — Mail, read-only context)
+    │   └── Contacts  (Google Doc, one-time snapshot — Mail, read-only context)
     └── 📁 3 Out   (folder ID: 1hKGLJa8cksuMGhHanSUh-VesOYLx_Pqo)
         └── 📁 Collection – [Month DD, YYYY]   (one per day, shared by all three products)
             ├── 🤖 AI News – [date]  /  🌍 Global News – [date]  /  🇸🇪 Swedish News – [date]
@@ -70,40 +73,42 @@ Investment Signal documents; it's just applied consistently now. Concretely:
   "AI Robotics Analysis – [date]" docs in Unified's own `2 Work`, reading the
   last 7 days for dedup, instead of appending to Daily-Sprint15's single
   running docs.
-- `Mail/Email-Summary.md` no longer tries to append to Daily-Sprint15's
-  `Important` / `Flightright Case File` docs — it still reads them for
-  context, but today's durable record is the dated Email Summary doc it
-  already saves into the Collection folder.
+- `Mail/Email-Summary.md` never writes to its `Important` / `Flightright
+  Case File` / `Contacts` context docs (own one-time snapshots, see below) —
+  today's durable record is the dated Email Summary doc it already saves
+  into the Collection folder.
 
 Notion's tools DO support true in-place updates (`insert_content`/
 `update_content`), which is why `Common/Cache-Update.md` still updates the
 shared Notion ring buffer as originally designed — the constraint is specific
 to Google Docs, not Notion.
 
-### Deliberately shared with Daily-Sprint15 (read-only, NOT duplicated or written to)
+### Nothing is shared with Daily-Sprint15 anymore — one-time snapshots instead
 
-Anders has one Gmail inbox and one set of real contacts/cases — duplicating
-that context under Unified's own `2 Work` would fork it into two diverging
-copies, and Unified can't write to Daily's docs anyway (see above). Mail
-therefore only **reads** these existing docs in **Daily full / 2 Work**
-(folder ID `1FWKfAMO0oD4K8s4xzM3U0MD7pok3TTg3`) for context:
+Unified used to read four things from Daily-Sprint15's Drive folders
+(`Important`, `Flightright Case File`, `Contacts`, and the email `Whitelist`).
+As of 2026-07-20, all four have been copied into Unified's own tree instead:
 
-- `Important` (file ID `1K83OcvWkjL9HLx5K9svgoeArTmEjPjMWnVZw0W7XAIY`)
-- `Flightright Case File` (file ID `1YMWyDVHSmEuo1qDWFJzZalnMSoybebxQ4fGpoc7ANG8`)
-- `Contacts` (file ID `1etlculH1YLMFnZ-vE8OIeWKn6VQfyezY204oJS3XoLQ`)
+- `Whitelist` — own `1 In` (file ID `1dSbcu3kuj16d8c2DhjEiUb5WTz3R5REsb_e4YkHweg8`)
+- `Important` — own `2 Work` (file ID `1qn87KIvnVfklHcOKRhDiCRwHdHICuVFtOW4q_MvaeOQ`)
+- `Flightright Case File` — own `2 Work` (file ID `1dzc6KANzeYlvQ4O_QrNtVhmisDFhwFQr9yOAWUAu6HY`)
+- `Contacts` — own `2 Work` (file ID `10RrQzeAc-JYf9qRNxmmop9h7_MMkDNuzSDTXueTqX78`)
 
-The email **Whitelist** is NOT shared — Unified keeps its own copy,
-`Whitelist` (file ID `1dSbcu3kuj16d8c2DhjEiUb5WTz3R5REsb_e4YkHweg8`) in its own
-`1 In`, copied from Daily-Sprint15's original at creation time. Unlike
-`Important`/`Flightright Case File`/`Contacts`, this is a small static config
-file, not a growing shared history — duplicating it doesn't fork any real
-context, so it made sense to own it outright. Edit Unified's copy directly to
-change what Mail treats as WHITELIST; it no longer affects or is affected by
-Daily-Sprint15's whitelist.
+**These are one-time snapshots, not a live link.** Daily-Sprint15's originals
+keep evolving independently (or don't — see below), and Unified's copies do
+too; the two will diverge over time with no mechanism to reconcile them,
+since neither Drive updates nor deletes are available to this toolset.
+Concretely: `Flightright Case File` was already stale at copy time — case
+FR4597448 shows as pending/active in the snapshot but had actually resolved
+that same day (Lufthansa paid) — Daily-Sprint15's own copy hadn't been
+updated either, for the same append-limitation reason documented above.
+Refresh these snapshots manually if their content goes stale; there is no
+automated sync.
 
-Invest's news/analysis history is NOT shared with Daily-Sprint15 — it keeps
-its own dated docs in Unified's `2 Work` (see above), since a shared *written*
-history isn't possible without update support.
+Invest's news/analysis history was never shared with Daily-Sprint15 in the
+first place — it always kept its own dated docs in Unified's `2 Work` (see
+above), since a shared *written* history isn't possible without update
+support.
 
 The Notion Cache ring buffer (`Admin → 🗃️ Cache`, data source ID
 `9b61968e-b3f5-4765-acde-f74ab98d109a`) remains shared and read-write, since
