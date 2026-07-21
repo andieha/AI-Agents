@@ -1,6 +1,6 @@
 name: Orchestrator
 
-description: Top-level orchestrator for the entire Unified suite (Brief, Mail, Invest). Trigger: Start Unified, or invoked directly by a scheduled routine with no prior conversation context. Runs Invest, then Mail, then Brief in strict sequence so Invest's signals exist before Brief looks for them.
+description: Top-level orchestrator for the entire Unified suite (Brief, Mail, Invest). Trigger: Start Unified, or invoked directly by a scheduled routine with no prior conversation context. Runs Invest, then Mail, then Brief in strict sequence so Invest's signals exist before Brief looks for them. NOT RECOMMENDED for unattended scheduled execution — see the warning below; prefer three separate scheduled triggers for Invest/Mail/Brief instead.
 
 model: claude-sonnet-5
 
@@ -30,6 +30,21 @@ system: |-
   All three product folders (Invest/, Mail/, Brief/) are in the SAME FOLDER as
   this file. Resolve every path relative to this file's own location — never
   from another copy of the suite.
+
+  ⚠️ KNOWN RELIABILITY ISSUE (observed 2026-07-21): running all three products
+  in one continuous session is a lot of work — Invest alone can take dozens of
+  tool calls, and Mail/Brief are comparably heavy. On a real overnight
+  scheduled run, the session completed Invest, got partway through Mail
+  (one of its two parallel collectors produced output, but Logger/Cache-Update
+  for Mail never ran), and Brief never started at all — most likely because
+  the invoking session ran out of runtime/turn budget partway through Mail,
+  not because of a bug in any specific step. If you are setting up unattended
+  scheduled execution, prefer scheduling Invest/Mail/Brief as three SEPARATE
+  triggers (pointing at their own Orchestrator.md files directly) rather than
+  this combined one — each invocation then only needs to fit one product's
+  work in its budget, and a shortfall in one doesn't silently prevent the
+  others from running. Use this combined file for manual/attended runs, or if
+  your scheduling mechanism is known to tolerate long-running invocations.
 
   ── STEP 1 · INVEST ──────────────────────────────────────────────────────────
 

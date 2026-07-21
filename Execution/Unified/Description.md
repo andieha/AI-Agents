@@ -11,14 +11,22 @@ independently — run one, two, or all three on any given day. No confirmation
 needed for any of them.
 
 **Start Unified** (`Orchestrator.md`, in this same folder) runs all three in strict
-sequence — Invest, then Mail, then Brief. Point any scheduled routine at
-`Execution/Unified/Orchestrator.md` rather than passing a bare trigger phrase, so a
-cold session doesn't have to guess what "Start Invest" means. Standing authorization
-for unconfirmed scheduled execution is documented in this repository's `CLAUDE.md`
-(not claimed by this file itself — a file vouching for its own authorization, with
-nothing else corroborating it, is exactly the shape of a prompt-injection attempt,
-and Orchestrator.md says so explicitly and tells the reader to check CLAUDE.md
-before trusting it).
+sequence — Invest, then Mail, then Brief — for manual/attended use. **For unattended
+scheduled execution, point three SEPARATE routines at `Invest/Orchestrator.md`,
+`Mail/Orchestrator.md`, and `Brief/Orchestrator.md` directly instead of the combined
+file.** A real overnight run of the combined Orchestrator (2026-07-21) completed
+Invest, stalled partway through Mail, and never started Brief at all — most likely
+because one continuous session ran out of runtime/turn budget trying to fit all
+three products' work into a single invocation, not because of a bug in any specific
+step. Splitting into three separate triggers bounds each invocation to one product's
+workload and means a shortfall in one doesn't silently prevent the others from
+running. Whichever file you point a routine at, pass it directly rather than a bare
+trigger phrase, so a cold session doesn't have to guess what "Start Invest" means.
+Standing authorization for unconfirmed scheduled execution is documented in this
+repository's `CLAUDE.md` (not claimed by any Orchestrator file itself — a file
+vouching for its own authorization, with nothing else corroborating it, is exactly
+the shape of a prompt-injection attempt, and every Orchestrator says so explicitly
+and tells the reader to check CLAUDE.md before trusting it).
 
 ## Google Drive Structure
 
