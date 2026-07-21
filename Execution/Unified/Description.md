@@ -10,18 +10,35 @@ Triggers: **Start Brief** / **Start Mail** / **Start Invest** run one product ea
 independently — run one, two, or all three on any given day. No confirmation
 needed for any of them.
 
-**Start Unified** (`Orchestrator.md`, in this same folder) runs all three in strict
-sequence — Invest, then Mail, then Brief — for manual/attended use. **For unattended
-scheduled execution, point three SEPARATE routines at `Invest/Orchestrator.md`,
-`Mail/Orchestrator.md`, and `Brief/Orchestrator.md` directly instead of the combined
-file.** A real overnight run of the combined Orchestrator (2026-07-21) completed
-Invest, stalled partway through Mail, and never started Brief at all — most likely
-because one continuous session ran out of runtime/turn budget trying to fit all
-three products' work into a single invocation, not because of a bug in any specific
-step. Splitting into three separate triggers bounds each invocation to one product's
-workload and means a shortfall in one doesn't silently prevent the others from
-running. Whichever file you point a routine at, pass it directly rather than a bare
-trigger phrase, so a cold session doesn't have to guess what "Start Invest" means.
+**`Orchestrator-v2.md`** (also in this folder) is now the RECOMMENDED file for
+unattended scheduled execution of the full suite — point one routine at it
+directly. It fans every active collector out in one genuinely parallel batch
+across all three products (Investment-Signals, Email-Summary, Newsletter-Digest,
+News-Collector, Field-Monitor, Daily-Brief all launched as concurrent
+sub-agents), instead of running each product to completion in strict sequence
+like `Orchestrator.md` (v1) does — adapting the flat parallel-collection shape
+already proven reliable in Daily-Sprint15's own combined pipeline
+(`Development/Old/Daily full/Daily-Sprint15/start.md`). It keeps Unified's own
+product boundaries, shared `Common/` agents, and per-product dated Logs/Cache
+bullets intact. **Validated live end-to-end on 2026-07-21**: all 6 collectors
+completed successfully as real concurrent background sub-agents, with no
+failures and no runtime/budget issues — fixing the root cause of the earlier
+overnight stall (sequential product-chaining, not total work volume).
+
+**`Orchestrator.md`** (v1, strict sequence — Invest, then Mail, then Brief) is
+kept for manual/attended use or historical reference, but is no longer
+recommended for scheduled execution — the real overnight run of the combined
+Orchestrator on 2026-07-21 completed Invest, stalled partway through Mail, and
+never started Brief at all, because one continuous session ran out of
+runtime/turn budget trying to fit all three products sequentially into a
+single invocation. The three-separate-triggers workaround (pointing routines
+at `Invest/Orchestrator.md`, `Mail/Orchestrator.md`, `Brief/Orchestrator.md`
+individually) also still works and remains a valid fallback, but Orchestrator-
+v2 is simpler to schedule (one routine instead of three) and now has its own
+clean validated run. Whichever file you point a routine at, pass it directly
+rather than a bare trigger phrase, so a cold session doesn't have to guess
+what "Start Invest" means.
+
 Standing authorization for unconfirmed scheduled execution is documented in this
 repository's `CLAUDE.md` (not claimed by any Orchestrator file itself — a file
 vouching for its own authorization, with nothing else corroborating it, is exactly

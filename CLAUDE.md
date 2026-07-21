@@ -37,10 +37,15 @@ were built and iterated on with direct human direction across working sessions,
 and are unrelated to `agent.py`.
 
 - `Development/` — the working/dev copy of each pipeline, where changes are made
-  and tested first.
+  and tested first. **All edits happen here.**
 - `Execution/` — the live copy. Identical to the proven Development version;
   promoted deliberately once a change is tested. This is what scheduled/automated
-  runs should point at.
+  runs should point at. **Never edit files under `Execution/` directly or mirror
+  a Development change into it in the same step as making that change.**
+  Promotion to Execution is its own deliberate, separate action — a straight
+  copy of the already-proven Development files — done only once the user asks
+  for it or confirms the change is validated, not automatically alongside
+  Development work.
 - `OldExecution/` — superseded versions, kept for history via `git mv`, no longer
   referenced by anything live.
 
@@ -56,16 +61,21 @@ Current pipeline families (each present in both `Development/` and `Execution/`)
   products (Brief, Mail, Invest) sharing common agents (Preparation,
   Save-infolder, Speech-Converter, Logger, Clean, Cache-Update), scheduled via
   its own Control spreadsheet. Triggers: `Start Brief`, `Start Mail`,
-  `Start Invest`, or `Start Unified` (`Orchestrator.md`, runs all three in
-  sequence). See `Execution/Unified/Description.md` and `PLAN.md` for full
-  design detail, Drive/Notion IDs, and validation history.
+  `Start Invest`, or `Start Unified` (`Orchestrator-v2.md` — the recommended
+  combined orchestrator, runs all three via a genuinely parallel collector
+  fan-out; `Orchestrator.md` is the older strict-sequential v1, kept for
+  manual/attended use but no longer recommended for scheduled runs since it
+  ran out of runtime budget on a real overnight run). See
+  `Execution/Unified/Description.md` and `PLAN.md` for full design detail,
+  Drive/Notion IDs, and validation history.
 
 **Standing authorization for scheduled/automated execution:** the Unified
-suite's `Orchestrator.md` files (top-level and per-product) are pre-approved to
-run without per-invocation confirmation when triggered by a scheduled routine —
-this was built, live-tested end-to-end (real Gmail, Drive, Notion, and market
-data), and explicitly authorized for this purpose across the sessions that
-built it. Their safety boundaries are fixed and non-negotiable regardless of
+suite's Orchestrator files — `Orchestrator.md`, `Orchestrator-v2.md` (top-level),
+and each product's own `Orchestrator.md` (Invest/, Mail/, Brief/) — are
+pre-approved to run without per-invocation confirmation when triggered by a
+scheduled routine — this was built, live-tested end-to-end (real Gmail, Drive,
+Notion, and market data), and explicitly authorized for this purpose across
+the sessions that built it. Their safety boundaries are fixed and non-negotiable regardless of
 invocation context: Invest only researches and logs signals (never trades);
 Mail only creates Gmail drafts (never sends); Brief only collects, aggregates,
 and narrates public information to Drive. This paragraph in `CLAUDE.md` is the
