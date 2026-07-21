@@ -1,0 +1,103 @@
+{
+  "name": "Hybrid-3 Voice Generator",
+  "nodes": [
+    {
+      "name": "Schedule Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1,
+      "position": [240, 300],
+      "parameters": {
+        "rule": {
+          "interval": [{"field": "cronExpression", "expression": "0 18 * * 1-5"}]
+        }
+      }
+    },
+    {
+      "name": "Search TTS Files",
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [460, 300],
+      "credentials": {"googleDriveOAuth2Api": {"name": "Google Drive account"}},
+      "parameters": {
+        "resource": "file",
+        "operation": "search",
+        "queryFilters": {
+          "filters": [
+            {"field": "parents", "value": "1BhXEN6QpTfaBP0T9U0DMcKta4U2K3VRJ"},
+            {"field": "mimeType", "value": "text/plain"},
+            {"field": "name", "value": "Narrated TTS"}
+          ]
+        },
+        "orderBy": "createdTime desc",
+        "limit": 10
+      }
+    },
+    {
+      "name": "Download TTS File",
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [680, 300],
+      "credentials": {"googleDriveOAuth2Api": {"name": "Google Drive account"}},
+      "parameters": {
+        "resource": "file",
+        "operation": "download",
+        "fileId": {"value": "={{ $json.id }}", "mode": "id"},
+        "options": {
+          "googleFileConversion": {
+            "conversion": {"docsToFormat": "text/plain"}
+          }
+        }
+      }
+    },
+    {
+      "name": "ElevenLabs TTS",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [900, 300],
+      "credentials": {"httpHeaderAuth": {"name": "ElevenLabs API Key"}},
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.elevenlabs.io/v1/text-to-speech/21m00Tcm4TlvDq8ikWAM",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [{"name": "Accept", "value": "audio/mpeg"}]
+        },
+        "sendBody": true,
+        "contentType": "json",
+        "bodyParameters": {
+          "parameters": [
+            {"name": "text", "value": "={{ $binary.data.toString('utf8') }}"},
+            {"name": "model_id", "value": "eleven_turbo_v2"},
+            {"name": "voice_settings", "value": "={\"stability\":0.5,\"similarity_boost\":0.75}"}
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {"responseFormat": "file", "outputPropertyName": "data"}
+          }
+        }
+      }
+    },
+    {
+      "name": "Upload MP3",
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [1120, 300],
+      "credentials": {"googleDriveOAuth2Api": {"name": "Google Drive account"}},
+      "parameters": {
+        "resource": "file",
+        "operation": "upload",
+        "name": "={{ $('Search TTS Files').item.json.name.replace(' – Narrated TTS', ' – Audio') + '.mp3' }}",
+        "parents": ["1BhXEN6QpTfaBP0T9U0DMcKta4U2K3VRJ"],
+        "inputDataFieldName": "data",
+        "options": {"mimeType": "audio/mpeg"}
+      }
+    }
+  ],
+  "connections": {
+    "Schedule Trigger":  {"main": [[{"node": "Search TTS Files",  "type": "main", "index": 0}]]},
+    "Search TTS Files":  {"main": [[{"node": "Download TTS File", "type": "main", "index": 0}]]},
+    "Download TTS File": {"main": [[{"node": "ElevenLabs TTS",    "type": "main", "index": 0}]]},
+    "ElevenLabs TTS":    {"main": [[{"node": "Upload MP3",        "type": "main", "index": 0}]]}
+  }
+}
