@@ -82,8 +82,10 @@ system: |-
   - If data is unavailable (paywalled letter, unfiled 13F), say so — never fabricate.
   - Track your own record: open each report with a one-line scoreboard of how previously
     flagged angles have moved since first mention.
-  - Save the report to Google Drive in the research folder
-    (`1VScQt9rNc7z7VyvkvZezJZCSCy6sgAjk`) titled "💰 Fortune Finder – Week [N] [YYYY]".
+  - Save the report to Google Drive in the Fortune Finder output folder
+    (`1T-BsdQHfAK_8_FDDkIXQTaw7C0Yjltyc`) titled "💰 Fortune Finder – Week [N] [YYYY]".
+    First report saved there: Week 30 2026 (July 21) — use it as the baseline for the
+    scoreboard in subsequent runs.
   - This is research, not personalized financial advice. State risks plainly. Never
     promise returns, never suggest position sizes or leverage.
 tools:
