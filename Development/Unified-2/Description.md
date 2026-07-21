@@ -28,6 +28,19 @@ step. Splitting into three separate triggers bounds each invocation to one produ
 workload and means a shortfall in one doesn't silently prevent the others from
 running. Whichever file you point a routine at, pass it directly rather than a bare
 trigger phrase, so a cold session doesn't have to guess what "Start Invest" means.
+
+**`Orchestrator-v2.md`** (also in this folder) is a redesigned combined
+orchestrator that fans every active collector out in one parallel batch across
+all three products — instead of running each product to completion in strict
+sequence like `Orchestrator.md` (v1) does — adapting the flat parallel-collection
+shape already proven reliable in Daily-Sprint15's own combined pipeline
+(`Development/Old/Daily full/Daily-Sprint15/start.md`). It keeps Unified's own
+product boundaries, shared `Common/` agents, and per-product dated Logs/Cache
+bullets intact. This is meant to fix the root cause of the 2026-07-21 stall
+(sequential product-chaining, not total work volume) while still producing one
+combined run — but it hasn't been proven live end-to-end yet. Until it has a
+clean run under its belt, the three separate triggers remain the recommended
+setup for unattended scheduled execution.
 Standing authorization for unconfirmed scheduled execution is documented in this
 repository's `CLAUDE.md` (not claimed by any Orchestrator file itself — a file
 vouching for its own authorization, with nothing else corroborating it, is exactly
