@@ -37,10 +37,15 @@ were built and iterated on with direct human direction across working sessions,
 and are unrelated to `agent.py`.
 
 - `Development/` — the working/dev copy of each pipeline, where changes are made
-  and tested first.
+  and tested first. **All edits happen here.**
 - `Execution/` — the live copy. Identical to the proven Development version;
   promoted deliberately once a change is tested. This is what scheduled/automated
-  runs should point at.
+  runs should point at. **Never edit files under `Execution/` directly or mirror
+  a Development change into it in the same step as making that change.**
+  Promotion to Execution is its own deliberate, separate action — a straight
+  copy of the already-proven Development files — done only once the user asks
+  for it or confirms the change is validated, not automatically alongside
+  Development work.
 - `OldExecution/` — superseded versions, kept for history via `git mv`, no longer
   referenced by anything live.
 
