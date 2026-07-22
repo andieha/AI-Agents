@@ -185,3 +185,28 @@ Cross-product touch points (to document in Description.md):
   collector rows present, file ID matches what Preparation.md and the three
   Orchestrators reference.
 - Optional live smoke test only if asked (e.g. run **Start Invest** end to end).
+
+## Update — Investment-Signals dedup rule fixed to catch confidence upgrades (2026-07-22)
+
+Orchestrator-v2's first real scheduled run (2026-07-22) surfaced a real gap in
+`Invest/Investment-Signals.md`'s Agent 3 dedup rule: it excluded any ticker +
+recommendation combination already logged in the last 7 days, with no
+awareness of confidence level. That day's Analysis doc independently found
+three genuinely new, concrete catalysts — ASML (Citi price-target hike + DZ
+Bank upgrade), Samsung (Tesla AI5/AI6 foundry capacity expansion, on top of
+the prior day's HBM4 news), and Rocket Lab ($266M US Air Force suborbital
+contract) — each raising that ticker's confidence tier (Medium → Medium-High
+or High) while leaving the recommendation itself unchanged (still Consider
+Buy). Because only the ticker+recommendation pair was checked, all three were
+silently dropped from generating a standalone Investment Signal document,
+even though each was independently reasoned through in the Analysis doc.
+
+Manually created the 3 missing Investment Signal docs for 2026-07-22 using
+the Analysis doc's own reasoning, and fixed the rule itself: Agent 3 now
+tracks the highest confidence tier previously logged per ticker+recommendation
+pair, and only excludes a repeat if today's tier is no higher than that.
+A confidence upgrade on an unchanged recommendation is now treated as a new,
+signal-worthy event, with its own Signal Type ("Confidence Upgrade") and
+title convention. Applied in Development only, per this repo's Development-
+only editing convention — promote to Execution once validated on a future
+run.

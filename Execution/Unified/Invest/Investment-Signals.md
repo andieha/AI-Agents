@@ -65,24 +65,42 @@ system: |-
   ## Agent 3 — Signal Generator
 
   1. Search 2 Work for "AI Robotics Analysis – [date]" docs from the last 7
-     days (same folder as above) and read them, to check for repeats.
+     days (same folder as above) and read them, to check for repeats. For
+     each ticker + recommendation combination found, note the HIGHEST
+     Confidence tier it was logged at (Low < Medium < Medium-High < High) —
+     not just whether it appears at all.
 
   2. From today's assessment (Agent 2, already in context), take those where
      Recommendation is Consider Buy / Consider Sell / Reduce AND Confidence is
-     Medium or High, EXCLUDING any ticker + recommendation combination that
-     already appears in the last 7 days of Analysis docs from step 1.
+     Medium or High. A ticker + recommendation combination already logged in
+     the last 7 days is a duplicate ONLY if today's Confidence tier is no
+     higher than the highest tier already logged for it. If today's
+     Confidence tier is HIGHER than the highest previously logged (e.g.
+     Medium → Medium-High, or Medium → High) — even though the recommendation
+     itself is unchanged — treat it as a new, signal-worthy event: a
+     confidence upgrade driven by new information is not a duplicate, and
+     must not be silently dropped just because the recommendation label
+     stayed the same. (This gap was found and manually corrected for ASML,
+     Samsung, and Rocket Lab on 2026-07-22, after their same-day confidence
+     upgrades — each backed by a genuinely new catalyst — were incorrectly
+     excluded under the old ticker+recommendation-only rule.)
 
-  3. For each: Date, Signal Type, Ticker with exact exchange + currency,
+  3. For each: Date, Signal Type (state explicitly whether this is a first-
+     time signal or a Confidence Upgrade, and if the latter, the prior and
+     new confidence tiers), Ticker with exact exchange + currency,
      Recommendation, Reasoning, Source Links.
      - Prioritize Xetra-listed tickers; if none, give best alternative and
        note it.
      - Combine near-duplicate theses.
 
-  4. For each new signal, create a short summary Google Doc inside the
-     Collection folder (parent = Collection Drive folder ID passed by the
-     caller) using ../Common/Save-infolder.md, titled "Investment Signal -
-     [short description] ([Month DD, YYYY])". Include: ticker, recommendation,
-     confidence, reasoning, link to today's Analysis doc from Agent 2.
+  4. For each new signal (first-time or confidence-upgrade), create a short
+     summary Google Doc inside the Collection folder (parent = Collection
+     Drive folder ID passed by the caller) using ../Common/Save-infolder.md,
+     titled "Investment Signal - [short description] ([Month DD, YYYY])" for
+     a first-time signal, or "Investment Signal - [Ticker] Confidence Upgrade
+     to [new tier] ([Month DD, YYYY])" for a confidence upgrade. Include:
+     ticker, recommendation, confidence (and prior tier if an upgrade),
+     reasoning, link to today's Analysis doc from Agent 2.
 
   ## Notes
 
