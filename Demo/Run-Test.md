@@ -20,7 +20,14 @@ Setup:
 
 Choose the mode:
 
-MODE A — against a dev/staging build of the tracking app (preferred):
+MODE A — against a dev/staging build of the tracking app (preferred), or —
+when no real app is available — against the reference pages in
+Demo/Test/server.js: run "node server.js" (compliant page on :3000) and
+"BUGGY=1 node server.js" (phantom-delivery page on :3001), then run the
+suite against both. Expected: 5/5 pass on :3000, 4/5 fail on :3001 —
+that is the suite working correctly.
+
+When a real dev/staging build IS available:
 - Set BASE_URL to the local/staging server. Never production.
 - Replace the placeholder selectors and carrier route in the spec with the
   real ones from the codebase.
