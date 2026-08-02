@@ -43,6 +43,11 @@ test.describe('Tracking page — carrier sync integrity', () => {
   });
 
   test('shows the delivery window once the carrier confirms custody', async ({ page }) => {
+    // Freeze the clock INSIDE the promised window — without this, the fixed
+    // fixture date silently expires and the test starts failing against any
+    // implementation with stale-window protection (found in a real run).
+    await page.clock.setFixedTime(new Date('2026-07-31T08:00:00+02:00'));
+
     await page.route(CARRIER_ROUTE, route =>
       route.fulfill({
         json: {
