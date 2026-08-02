@@ -80,6 +80,37 @@ test.describe('Tracking page — carrier sync integrity', () => {
     // An estimate may appear, but must live in its own labelled component.
     await expect(page.locator(selectors.deliveryWindow)).toBeHidden();
   });
+
+  /**
+   * Added after a real observed incident (order 2312616203, July 2026 — see
+   * "Verification - Order 2312616203.md"): the page kept headlining
+   * "Förväntad leverans 31 juli 09:00-15:00" two days AFTER that window had
+   * passed, while the parcel had still not reached the carrier. A promise
+   * must not silently survive its own deadline.
+   */
+  test('a stale window does not survive its own deadline', async ({ page }) => {
+    // Freeze the browser clock AFTER the promised window has expired.
+    await page.clock.setFixedTime(new Date('2026-08-02T10:00:00+02:00'));
+
+    await page.route(CARRIER_ROUTE, route =>
+      route.fulfill({
+        json: {
+          carrier: 'Bring',
+          status: 'NOT_RECEIVED',
+          // Internal systems may still hold the old promise — the UI must not repeat it.
+          expectedDelivery: { date: '2026-07-31', from: '09:00', to: '15:00' },
+        },
+      })
+    );
+
+    await page.goto(`${BASE_URL}/tracking/${TEST_ORDER_ID}`);
+
+    // The expired promise must be gone…
+    await expect(page.locator(selectors.deliveryWindow)).toBeHidden();
+
+    // …and replaced by an explicit delayed/unknown state — fail loud, not silent.
+    await expect(page.locator(selectors.status)).toContainText(/försenad|delayed|status unavailable|väntar på inlämning/i);
+  });
 });
 
 /**
