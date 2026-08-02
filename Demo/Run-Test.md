@@ -40,9 +40,15 @@ MODE B — observational, against a live tracking URL (no mocking possible):
   result.
 
 MODE C — evidence-based, from a capture (PDF/screenshot of the page):
+- Default capture: Demo/Test/Elgiganten - Min order - 2312616203.pdf (the
+  committed evidence for the observed case). Use a newer capture if the user
+  supplies one.
 - Read the capture. Extract: headline delivery promise, current status step,
   status ladder position, and the date of capture relative to the promised
-  window.
+  window. Note any embedded carrier tracking URL (this capture contains
+  https://tracking.bring.se/tracking/370727790063193606) — if reachable, the
+  carrier's own page completes the rule 2 check; if not, record it as the
+  open verification item.
 - Judge rule by rule (1: no window without carrier custody; 2: carrier truth
   over internal status; 3: forecast never styled as confirmed; 4: support
   parity — only if support statements are available; 5: fail loud — did a
