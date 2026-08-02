@@ -1,0 +1,49 @@
+# Elgiganten Tracking Portal - Cursor Guidelines (ILLUSTRATIVE EXAMPLE)
+#
+# NOTE: This file is written by an external customer without access to the
+# actual codebase. Status names, module boundaries and conventions below are
+# placeholders and must be mapped to Elgiganten's real domain model and to
+# Bring's actual API status codes before use.
+
+## Project Context
+- Domain: Customer-facing tracking portal and internal support dashboard.
+- Assumed stack: TypeScript, Node.js, Playwright (E2E testing).
+- Primary carrier API: Bring Logistics.
+
+## Core Business Rules
+
+1. The "No Phantom Delivery" rule
+   The tracking UI must never display a specific delivery date or time window
+   (e.g. "09:00-15:00") unless the carrier API has confirmed physical custody
+   of the parcel — i.e. a real scan event, not an internal forecast.
+   Map to the actual Bring status codes for "received at terminal" and
+   "out for delivery".
+
+2. Single source of truth
+   If the internal warehouse status says DISPATCHED but the carrier API reports
+   the parcel as not received, the UI must fall back to the carrier's truth
+   ("Awaiting carrier pickup" / "Väntar på inlämning till transportör").
+   Internal optimism must never override carrier reality.
+
+3. Distinguish forecast from fact
+   A predicted delivery date is legitimate, but must be labelled as an estimate
+   ("Beräknad leverans") and must never be rendered in the same component or
+   visual style as a confirmed time window ("Levereras 09:00-15:00").
+
+4. Support dashboard parity
+   Data shown to the customer on the tracking page must match what Level 1
+   support agents see. Support views should read live carrier data rather than
+   cached internal warehouse status, so agents cannot confirm a delivery that
+   the carrier has no record of.
+
+5. Fail loud, not silent
+   If the carrier API is unreachable or returns an unknown status, show an
+   explicit "status unavailable" state. Never fall back to internal estimates
+   presented as confirmed facts.
+
+## Testing Guidelines
+- E2E tests must mock the carrier API to cover edge cases: parcel never
+  received, parcel delayed, API timeout, unknown status code.
+- Assert both directions: the time window must be hidden when carrier data is
+  missing, AND shown when the carrier has confirmed custody.
+- Never point automated tests at production URLs; use a configurable base URL.
